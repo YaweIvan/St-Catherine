@@ -9,20 +9,7 @@
 	<meta name="keywords" content="free website templates, free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
 	<meta name="author" content="freehtml5.co" />
 
-	<!-- 
-	//////////////////////////////////////////////////////
-
-	FREE HTML5 TEMPLATE 
-	DESIGNED & DEVELOPED by FreeHTML5.co
-		
-	Website: 		http://freehtml5.co/
-	Email: 			info@freehtml5.co
-	Twitter: 		http://twitter.com/fh5co
-	Facebook: 		https://www.facebook.com/fh5co
-
-	//////////////////////////////////////////////////////
-	 -->
-
+	
   	<!-- Facebook and Twitter integration -->
 	<meta property="og:title" content=""/>
 	<meta property="og:image" content=""/>
@@ -77,6 +64,7 @@
             gap: 10px;
             padding: 10px;
 			margin-bottom: 10px;
+			margin-top: 130px;
 			
         }
         .gallery-space img {
@@ -85,6 +73,7 @@
             height: auto;
             cursor: pointer;
             border-radius: 5px;
+			
 			
         }
         .lightbox {
@@ -97,21 +86,63 @@
             background: rgba(0, 0, 0, 0.8);
             justify-content: center;
             align-items: center;
+            z-index: 10000;
         }
         .lightbox img {
             max-width: 90%;
             max-height: 90%;
         }
+        
+        /* Completely redesigned navigation buttons */
         .close, .prev, .next {
             position: absolute;
             color: white;
-            font-size: 24px;
+            font-size: 40px;
+            font-weight: bold;
             cursor: pointer;
-            padding: 10px;
+            background-color: rgba(0, 0, 0, 0.6);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 10001;
+            text-shadow: 0 0 5px black;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+            border: 2px solid white;
+            transition: all 0.3s ease;
         }
-        .close { top: 10px; right: 20px; }
-        .prev { left: 20px; }
-        .next { right: 20px; }
+        
+        .close:hover, .prev:hover, .next:hover {
+            background-color: rgba(255, 0, 0, 0.7);
+            transform: scale(1.1);
+        }
+        
+        .close { 
+            top: 20px; 
+            right: 20px; 
+        }
+        
+        .prev { 
+            left: 20px; 
+            top: 50%; 
+            transform: translateY(-50%); 
+        }
+        
+        .next { 
+            right: 20px; 
+            top: 50%; 
+            transform: translateY(-50%); 
+        }
+        
+        /* Position text correctly inside buttons */
+        .close span, .prev span, .next span {
+            line-height: 1;
+            position: relative;
+            top: -2px;
+        }
+        
         @media (max-width: 700px) {
             .gallery-space img {
                 width: calc(33.33% - 10px); /* 3 images per row on smaller screens */
@@ -120,6 +151,12 @@
         @media (max-width: 480px) {
             .gallery-space img {
                 width: calc(50% - 10px); /* 2 images per row on mobile */
+            }
+            
+            .close, .prev, .next {
+                width: 50px;
+                height: 50px;
+                font-size: 30px;
             }
         }
     </style>
@@ -130,7 +167,7 @@
 	<div class="fh5co-loader"></div>
 	
 	<div id="page">
-	<nav class="fh5co-nav" role="navigation">
+	<nav class="fh5co-nav" role="navigation" style="background-color: rgb(195, 107, 107);">
 		
 		<div class="top-menu">
 			<div class="container">
@@ -143,25 +180,27 @@
 							<li><a href="index.html">Home</a></li>
 							<li><a href="about.html">About</a></li>
 							<li><a href="Academics.html">Academics</a></li>
-							<li><a href="News and Events.html">News and Events</a></li>
+							<li><a href="index.html">News and Events</a></li>
 						
-							<li><a href="Admissions.html">Admissions</a></li>
+							<li><a href="index.html">Admissions</a></li>
 							<li class="active"><a href="Gallery.html">Gallery</a></li>
 							<li><a href="contact.html">Contact</a></li>
-							<li class="btn-cta"><a href="#"><span>Login</span></a></li>
+							
 							
 						</ul>
 					</div>
+					
 				</div>
 				
+					   
 			</div>
 		</div>
+		<div >
+			<marquee behaviour="scroll" direction="right" loop="infinite" style="background-color: gray; color: maroon; font-weight: bold;">OUR GALLERY</marquee>
+		   </div>
 	</nav>
 	
-	<div>
-		<marquee behaviour="scroll" direction="right" loop="infinite" style="background-color: gray; color: maroon; font-weight: bold;">OUR GALLERY</marquee>
-	   </div>
-	   
+
 	<div class="gallery-space">
         <img src="/images/Screenshot 2025-03-08 223308.png" alt="Image 1">
         <img src="/images/img_bg_1.jpg" alt="Image 2">
@@ -184,10 +223,10 @@
     </div>
     
     <div class="lightbox" id="lightbox">
-        <span class="close" onclick="closeLightbox()">&times;</span>
-        <span class="prev" onclick="prevImage()">&#10094;</span>
+        <div class="close" onclick="closeLightbox()"><span>&times;</span></div>
+        <div class="prev" onclick="prevImage()"><span>&#10094;</span></div>
         <img id="lightbox-img">
-        <span class="next" onclick="nextImage()">&#10095;</span>
+        <div class="next" onclick="nextImage()"><span>&#10095;</span></div>
     </div>
     
     <script>
@@ -200,10 +239,16 @@
             currentIndex = index;
             lightbox.style.display = 'flex';
             lightboxImg.src = images[index].src;
+            
+            // Add keyboard navigation
+            document.addEventListener('keydown', handleKeyPress);
         }
         
         function closeLightbox() {
             lightbox.style.display = 'none';
+            
+            // Remove keyboard event listener when lightbox is closed
+            document.removeEventListener('keydown', handleKeyPress);
         }
         
         function prevImage() {
@@ -216,8 +261,26 @@
             lightboxImg.src = images[currentIndex].src;
         }
         
+        // Handle keyboard navigation
+        function handleKeyPress(e) {
+            if (e.key === 'Escape') {
+                closeLightbox();
+            } else if (e.key === 'ArrowLeft') {
+                prevImage();
+            } else if (e.key === 'ArrowRight') {
+                nextImage();
+            }
+        }
+        
         images.forEach((img, index) => {
             img.addEventListener('click', () => openLightbox(index));
+        });
+        
+        // Close lightbox when clicking outside the image
+        lightbox.addEventListener('click', function(e) {
+            if (e.target === lightbox) {
+                closeLightbox();
+            }
         });
     </script>
 	
@@ -333,4 +396,3 @@
 	</script>
 	</body>
 </html>
-

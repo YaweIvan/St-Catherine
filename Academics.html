@@ -3,36 +3,11 @@
 	<head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>St Catherine Junior School</title>
+	<title>St Catherine Junior School - Academics</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Free HTML5 Website Template by freehtml5.co" />
-	<meta name="keywords" content="free website templates, free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
-	<meta name="author" content="freehtml5.co" />
-
-	<!-- 
-	//////////////////////////////////////////////////////
-
-	FREE HTML5 TEMPLATE 
-	DESIGNED & DEVELOPED by FreeHTML5.co
-		
-	Website: 		http://freehtml5.co/
-	Email: 			info@freehtml5.co
-	Twitter: 		http://twitter.com/fh5co
-	Facebook: 		https://www.facebook.com/fh5co
-
-	//////////////////////////////////////////////////////
-	 -->
-
-  	<!-- Facebook and Twitter integration -->
-	<meta property="og:title" content=""/>
-	<meta property="og:image" content=""/>
-	<meta property="og:url" content=""/>
-	<meta property="og:site_name" content=""/>
-	<meta property="og:description" content=""/>
-	<meta name="twitter:title" content="" />
-	<meta name="twitter:image" content="" />
-	<meta name="twitter:url" content="" />
-	<meta name="twitter:card" content="" />
+	<meta name="description" content="St Catherine Junior School Academics Page" />
+	<meta name="keywords" content="school, education, academics, students, performance" />
+	<meta name="author" content="St Catherine Junior School" />
 
 	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400" rel="stylesheet">
@@ -66,14 +41,171 @@
 	<!--[if lt IE 9]>
 	<script src="js/respond.min.js"></script>
 	<![endif]-->
-
+   
+	<style>
+        .section-title {
+            text-align: center;
+            margin: 40px 0;
+            padding-top: 80px;
+            
+        }
+        
+        .section-title h2 {
+            font-size: 36px;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 20px;
+            margin-top: 10px;
+        }
+        
+        .section-title p {
+            color: #666;
+            font-size: 18px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .student-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin: 40px 0;
+            padding: 0 15px;
+        }
+        
+        .student-card {
+            width: calc(20% - 20px);
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .student-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+        
+        .student-image {
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .student-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .student-card:hover .student-image img {
+            transform: scale(1.1);
+        }
+        
+        .student-details {
+            padding: 15px;
+            text-align: center;
+        }
+        
+        .student-name {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 5px;
+            color: #333;
+        }
+        
+        .student-grade {
+            color: #e74c3c;
+            font-weight: 600;
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+        
+        .student-class {
+            color: #666;
+            font-size: 14px;
+        }
+        /* performancesection */
+        .performance-section {
+            background-color: #fff9f9;
+            padding: 50px 0;
+            text-align: center;
+            
+        }
+        
+        .performance-card {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        
+        .view-history-btn {
+            display: inline-block;
+            background: #e74c3c;
+            color: white;
+            padding: 12px 25px;
+            font-size: 16px;
+            border-radius: 30px;
+            margin-top: 20px;
+            text-decoration: none;
+            transition: background 0.3s ease;
+        }
+        
+        .view-history-btn:hover {
+            background: #c0392b;
+            color: white;
+        }
+        
+        /* Responsive design */
+        @media (max-width: 1200px) {
+            .student-card {
+                width: calc(25% - 20px);
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .student-card {
+                width: calc(33.33% - 20px);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .student-card {
+                width: calc(50% - 20px);
+            }
+            
+            .section-title h2 {
+                font-size: 30px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .student-card {
+                width: 100%;
+            }
+            
+            .section-title h2 {
+                font-size: 24px;
+            }
+            
+            .section-title p {
+                font-size: 16px;
+            }
+        }
+    </style>
 	</head>
 	<body>
 		
 	<div class="fh5co-loader"></div>
 	
 	<div id="page">
-	<nav class="fh5co-nav" role="navigation">
+	<nav class="fh5co-nav" role="navigation" style="background-color: rgb(195, 107, 107);">
 		
 		<div class="top-menu">
 			<div class="container">
@@ -85,136 +217,169 @@
 						<ul>
 							<li><a href="index.html">Home</a></li>
 							<li><a href="about.html">About</a></li>
-							<li class="active"><a href="Academics.html">Academics</a></li>
-							<li><a href="News and Events.html">News and Events</a></li>
-							
-							<li><a href="Admissions.html">Admissions</a></li>
+							<li class="active"><a href="academics.html">Academics</a></li>
+							<li><a href="index.html">News and Events</a></li>
+							<li><a href="index.html">Admissions</a></li>
 							<li><a href="Gallery.html">Gallery</a></li>
 							<li><a href="contact.html">Contact</a></li>
-							<li class="btn-cta"><a href="#"><span>Login</span></a></li>
-							
 						</ul>
 					</div>
 				</div>
-				
 			</div>
+		</div>
+		<div>
+			<marquee behaviour="scroll" direction="right" loop="infinite" style="background-color: gray; color: maroon; font-weight: bold;">ACADEMIC EXCELLENCE</marquee>
 		</div>
 	</nav>
 	
-	<aside id="fh5co-hero">
-		<div class="flexslider">
-			<ul class="slides">
-		   	<li style="background-image: url(images/img_bg_4.jpg);">
-		   		<div class="overlay-gradient"></div>
-		   		<div class="container">
-		   			<div class="row">
-			   			<div class="col-md-8 col-md-offset-2 text-center slider-text">
-			   				<div class="slider-text-inner">
-			   					<h1 class="heading-section">Our Course</h1>
-									<h2>Free html5 templates Made by <a href="http://freehtml5.co/" target="_blank">freehtml5.co</a></h2>
-			   				</div>
-			   			</div>
-			   		</div>
-		   		</div>
-		   	</li>
-		  	</ul>
-	  	</div>
-	</aside>
 
-	<div id="fh5co-course">
-		<div class="container">
-			<div class="row animate-box">
-				<div class="col-md-6 col-md-offset-3 text-center fh5co-heading">
-					<h2>Our Course</h2>
-					<p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-6 animate-box">
-					<div class="course">
-						<a href="#" class="course-img" style="background-image: url(images/project-1.jpg);">
-						</a>
-						<div class="desc">
-							<h3><a href="#">Web Master</a></h3>
-							<p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
-							<span><a href="#" class="btn btn-primary btn-sm btn-course">Take A Course</a></span>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-6 animate-box">
-					<div class="course">
-						<a href="#" class="course-img" style="background-image: url(images/project-2.jpg);">
-						</a>
-						<div class="desc">
-							<h3><a href="#">Business &amp; Accounting</a></h3>
-							<p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
-							<span><a href="#" class="btn btn-primary btn-sm btn-course">Take A Course</a></span>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-6 animate-box">
-					<div class="course">
-						<a href="#" class="course-img" style="background-image: url(images/project-3.jpg);">
-						</a>
-						<div class="desc">
-							<h3><a href="#">Science &amp; Technology</a></h3>
-							<p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
-							<span><a href="#" class="btn btn-primary btn-sm btn-course">Take A Course</a></span>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-6 animate-box">
-					<div class="course">
-						<a href="#" class="course-img" style="background-image: url(images/project-4.jpg);">
-						</a>
-						<div class="desc">
-							<h3><a href="#">Health &amp; Psychology</a></h3>
-							<p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
-							<span><a href="#" class="btn btn-primary btn-sm btn-course">Take A Course</a></span>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-6 animate-box">
-					<div class="course">
-						<a href="#" class="course-img" style="background-image: url(images/project-5.jpg);">
-						</a>
-						<div class="desc">
-							<h3><a href="#">Science &amp; Technology</a></h3>
-							<p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
-							<span><a href="#" class="btn btn-primary btn-sm btn-course">Take A Course</a></span>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-6 animate-box">
-					<div class="course">
-						<a href="#" class="course-img" style="background-image: url(images/project-6.jpg);">
-						</a>
-						<div class="desc">
-							<h3><a href="#">Health &amp; Psychology</a></h3>
-							<p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
-							<span><a href="#" class="btn btn-primary btn-sm btn-course">Take A Course</a></span>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<div id="fh5co-register" style="background-image: url(images/img_bg_2.jpg);">
-		<div class="overlay"></div>
-		<div class="row">
-			<div class="col-md-8 col-md-offset-2 animate-box">
-				<div class="date-counter text-center">
-					<h2>Get 400 of Online Courses for Free</h2>
-					<h3>By Mike Smith</h3>
-					<div class="simply-countdown simply-countdown-one"></div>
-					<p><strong>Limited Offer, Hurry Up!</strong></p>
-					<p><a href="#" class="btn btn-primary btn-lg btn-reg">Register Now!</a></p>
-				</div>
-			</div>
-		</div>
-	</div>
-
+	
+    <!-- Top Students Section -->
+    <div class="container">
+        <div class="section-title">
+            <h2>Our Top Performing Students</h2>
+            <p>St Catherine Junior School is proud to recognize the academic achievements of our outstanding students. These young scholars have demonstrated exceptional dedication to their studies.</p>
+        </div>
+        
+        <div class="student-container">
+            <!-- Student 1 -->
+            <div class="student-card">
+                <div class="student-image">
+                    <img src="/images/Screenshot 2025-03-08 223308.png" alt="Student 1">
+                </div>
+                <div class="student-details">
+                    <div class="student-name">Sarah Johnson</div>
+                    <div class="student-grade">Grade: A+</div>
+                    <div class="student-class">Class 6A</div>
+                </div>
+            </div>
+            
+            <!-- Student 2 -->
+            <div class="student-card">
+                <div class="student-image">
+                    <img src="/api/placeholder/400/320" alt="Student 2">
+                </div>
+                <div class="student-details">
+                    <div class="student-name">Michael Williams</div>
+                    <div class="student-grade">Grade: A+</div>
+                    <div class="student-class">Class 6B</div>
+                </div>
+            </div>
+            
+            <!-- Student 3 -->
+            <div class="student-card">
+                <div class="student-image">
+                    <img src="/images/project-3.jpg" alt="Student 3">
+                </div>
+                <div class="student-details">
+                    <div class="student-name">Jessica Brown</div>
+                    <div class="student-grade">Grade: A+</div>
+                    <div class="student-class">Class 6A</div>
+                </div>
+            </div>
+            
+            <!-- Student 4 -->
+            <div class="student-card">
+                <div class="student-image">
+                    <img src="/images/Screenshot 2025-03-08 223353.png" alt="Student 4">
+                </div>
+                <div class="student-details">
+                    <div class="student-name">Daniel Smith</div>
+                    <div class="student-grade">Grade: A</div>
+                    <div class="student-class">Class 6C</div>
+                </div>
+            </div>
+            
+            <!-- Student 5 -->
+            <div class="student-card">
+                <div class="student-image">
+                    <img src="/api/placeholder/400/320" alt="Student 5">
+                </div>
+                <div class="student-details">
+                    <div class="student-name">Emily Davis</div>
+                    <div class="student-grade">Grade: A</div>
+                    <div class="student-class">Class 6B</div>
+                </div>
+            </div>
+            
+            <!-- Student 6 -->
+            <div class="student-card">
+                <div class="student-image">
+                    <img src="/api/placeholder/400/320" alt="Student 6">
+                </div>
+                <div class="student-details">
+                    <div class="student-name">James Wilson</div>
+                    <div class="student-grade">Grade: A</div>
+                    <div class="student-class">Class 6A</div>
+                </div>
+            </div>
+            
+            <!-- Student 7 -->
+            <div class="student-card">
+                <div class="student-image">
+                    <img src="/api/placeholder/400/320" alt="Student 7">
+                </div>
+                <div class="student-details">
+                    <div class="student-name">Sophia Martinez</div>
+                    <div class="student-grade">Grade: A</div>
+                    <div class="student-class">Class 6C</div>
+                </div>
+            </div>
+            
+            <!-- Student 8 -->
+            <div class="student-card">
+                <div class="student-image">
+                    <img src="/api/placeholder/400/320" alt="Student 8">
+                </div>
+                <div class="student-details">
+                    <div class="student-name">David Anderson</div>
+                    <div class="student-grade">Grade: A-</div>
+                    <div class="student-class">Class 6B</div>
+                </div>
+            </div>
+            
+            <!-- Student 9 -->
+            <div class="student-card">
+                <div class="student-image">
+                    <img src="/api/placeholder/400/320" alt="Student 9">
+                </div>
+                <div class="student-details">
+                    <div class="student-name">Olivia Thomas</div>
+                    <div class="student-grade">Grade: A-</div>
+                    <div class="student-class">Class 6A</div>
+                </div>
+            </div>
+            
+            <!-- Student 10 -->
+            <div class="student-card">
+                <div class="student-image">
+                    <img src="/api/placeholder/400/320" alt="Student 10">
+                </div>
+                <div class="student-details">
+                    <div class="student-name">Ethan Jackson</div>
+                    <div class="student-grade">Grade: A-</div>
+                    <div class="student-class">Class 6C</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Historical Performance Section -->
+    <div class="performance-section">
+        <div class="container">
+            <div class="section-title" style="padding-top: 5px;">
+                <h2>National Examination Results</h2>
+                <p>St Catherine Junior School has a proud tradition of excellence in national examinations. Our students consistently achieve outstanding results, reflecting our commitment to quality education.</p>
+            </div>
+            
+            <div class="performance-card">
+                <h3>View Our Historical Performance</h3>
+                <p>Our school maintains detailed records of student performance in national examinations over the years. Click below to explore our academic achievements and see how our students have consistently excelled.</p>
+                <a href="exam-history.html" class="view-history-btn">View Exam History</a>
+            </div>
+        </div>
+    </div>
+	
 	<footer id="fh5co-footer" role="contentinfo" style="background-image: url(images/img_bg_4.jpg);">
 		<div class="overlay"></div>
 		<div class="container">
@@ -270,12 +435,10 @@
 			<div class="row copyright">
 				<div class="col-md-12 text-center">
 					<p>
-						<small class="block">&copy; 2016 Free HTML5. All Rights Reserved.</small> 
-						<small class="block">Designed by <a href="http://freehtml5.co/" target="_blank">FreeHTML5.co</a> Demo Images: <a href="http://unsplash.co/" target="_blank">Unsplash</a> &amp; <a href="https://www.pexels.com/" target="_blank">Pexels</a></small>
+						<small class="block">&copy; 2025 St Catherine Junior School. All Rights Reserved.</small>
 					</p>
 				</div>
 			</div>
-
 		</div>
 	</footer>
 	</div>
@@ -303,28 +466,7 @@
 	<!-- Magnific Popup -->
 	<script src="js/jquery.magnific-popup.min.js"></script>
 	<script src="js/magnific-popup-options.js"></script>
-	<!-- Count Down -->
-	<script src="js/simplyCountdown.js"></script>
 	<!-- Main -->
 	<script src="js/main.js"></script>
-	<script>
-    var d = new Date(new Date().getTime() + 1000 * 120 * 120 * 2000);
-
-    // default example
-    simplyCountdown('.simply-countdown-one', {
-        year: d.getFullYear(),
-        month: d.getMonth() + 1,
-        day: d.getDate()
-    });
-
-    //jQuery example
-    $('#simply-countdown-losange').simplyCountdown({
-        year: d.getFullYear(),
-        month: d.getMonth() + 1,
-        day: d.getDate(),
-        enableUtc: false
-    });
-	</script>
 	</body>
 </html>
-

@@ -54,7 +54,346 @@
 	<script src="js/respond.min.js"></script>
 	<![endif]-->
 
+<style>
+	
+/* about.html.css*/
 
+	
+	h1 {
+    color: #662b2b;
+    margin-bottom: 40px;
+    font-size: 24px;
+    text-align: center;
+}
+
+.timeline { 
+    position: relative; 
+    padding: 20px 0;
+    width: 100%;
+    max-width: 100%;
+}
+
+.timeline-line {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background-color: #ce343c;
+    transform: translateX(-50%);
+}
+
+.timeline-item {
+    position: relative;
+    display: flex;
+    margin-bottom: 60px;
+    align-items: center;
+    width: 100%;
+}
+
+.timeline-circle {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: #8c1616;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 22px;
+    z-index: 2;
+    border: 8px solid #8c1616;
+    box-sizing: border-box;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.timeline-content {
+    width: 45%;
+    padding: 15px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    border: 1px solid #ce343c;
+    max-width: 500px;
+}
+
+/* Position elements to the left or right of the timeline */
+.timeline-item:nth-child(odd) .timeline-content {
+    margin-left: auto;
+    margin-right: 55%;
+}
+
+.timeline-item:nth-child(even) .timeline-content {
+    margin-left: 55%;
+}
+
+.timeline-content h2 {
+    margin-top: 0;
+    font-size: 18px;
+    color: #333;
+}
+
+.timeline-content p {
+    color: #666;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.read-more {
+    text-align: center;
+    margin-top: 20px;
+    color: #ce343c;
+    font-size: 14px;
+	margin-left:100px;
+}
+
+.read-more a {
+    color: #ce343c;
+    text-decoration: none;
+}
+
+.read-more a:hover {
+    text-decoration: underline;
+}
+
+.footer-quote {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 20px;
+    color: #555;
+}
+
+/* Media queries for responsive design */
+@media screen and (max-width: 992px) {
+    .timeline-content {
+        width: 42%;
+    }
+    
+    .timeline-item:nth-child(odd) .timeline-content {
+        margin-right: 52%;
+    }
+    
+    .timeline-item:nth-child(even) .timeline-content {
+        margin-left: 52%;
+    }
+    
+    .timeline-circle {
+        width: 70px;
+        height: 70px;
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    /* Switch to vertical timeline on smaller screens */
+    .timeline-line {
+        left: 40px;
+    }
+    
+    .timeline-circle {
+        left: 40px;
+        width: 60px;
+        height: 60px;
+        font-size: 18px;
+    }
+    
+    .timeline-content {
+        width: 75%;
+        max-width: none;
+    }
+    
+    .timeline-item:nth-child(odd) .timeline-content,
+    .timeline-item:nth-child(even) .timeline-content {
+        margin-left: 70px;
+        margin-right: 0;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .timeline-line {
+        left: 30px;
+    }
+    
+    .timeline-circle {
+        left: 30px;
+        width: 50px;
+        height: 50px;
+        font-size: 16px;
+    }
+    
+    .timeline-content {
+        width: 80%;
+        padding: 10px;
+    }
+    
+    .timeline-item:nth-child(odd) .timeline-content,
+    .timeline-item:nth-child(even) .timeline-content {
+        margin-left: 60px;
+    }
+    
+    .timeline-item {
+        margin-bottom: 40px;
+    }
+
+	}
+/* pticture and word horizontally */
+	.horizontal-section {
+  padding: 20px 0;
+}
+
+.image-column {
+  padding: 0;
+}
+
+.text-column {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.image-column img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+@media (min-width: 768px) {
+  .image-column, .text-column {
+    height: 400px; /* adjust this value to your needs */
+  }
+}
+
+.school-values {
+  display: flex;
+  padding: 20px;
+  background-color: antiquewhite;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.motto-block, .mission-block, .vision-block {
+  flex-basis: 30%;
+  margin: 20px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.motto-block {
+  background-color: grey; /*grey*/
+  color: #fff;
+}
+
+.mission-block {
+  background-color: #34a85a; /* green */
+  color: #fff;
+}
+
+.vision-block {
+  background-color: maroon; /* gray */
+  color: #fff;
+}
+
+.motto-block:hover, .mission-block:hover, .vision-block:hover {
+  transform: scale(1.05);
+}
+
+h2 {
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+p {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* Media queries to adjust layout on smaller screens */
+
+@media (max-width: 768px) {
+  .motto-block, .mission-block, .vision-block {
+    flex-basis: 45%;
+  }
+}
+
+@media (max-width: 480px) {
+  .motto-block, .mission-block, .vision-block {
+    flex-basis: 100%;
+    margin: 10px;
+    }
+}
+
+/* school fees */
+ /* General Styles */
+ .card-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+	
+  }
+
+  .card {
+    width: 30%;
+    min-width: 150px;
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+    color: #fff;
+    font-weight: bold;
+  }
+
+  /* Pre-primary Colors */
+  .pp1 { background-color: #ffadad; }
+  .pp2 { background-color: #ffd6a5; }
+  .pp3 { background-color: #fdffb6; }
+
+  /* Primary Colors */
+  .p1 { background-color: #9bf6ff; }
+  .p2 { background-color: #a0c4ff; }
+  .p3 { background-color: #bdb2ff; }
+  .p4 { background-color: #ffc6ff; }
+  .p5 { background-color: #ffcaaf; }
+  .p6 { background-color: #ff8fa3; }
+
+  /* Centered P7 Card */
+  .p7-row {
+    justify-content: center;
+  }
+
+  .p7 {
+    width: 40%;
+    background-color: #6c5ce7;
+  }
+
+  /* Responsive Layout */
+  @media (max-width: 768px) {
+    .card {
+      width: 45%;
+    }
+    .p7 {
+      width: 60%;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .card {
+      width: 100%;
+    }
+    .p7 {
+      width: 80%;
+    }
+  }
+
+</style>
 	
  
 	</head>
@@ -76,12 +415,12 @@
 							<li><a href="index.html">Home</a></li>
 							<li class="active"><a href="about.html">About</a></li>
 							<li><a href="Academics.html">Academics</a></li>
-							<li><a href="News and Events.html">News and Events</a></li>
+							<li><a href="index.html">News and Events</a></li>
 							
-							<li><a href="Admissions.html">Admissions</a></li>
+							<li><a href="index.html">Admissions</a></li>
 							<li><a href="Gallery.html">Gallery</a></li>
 							<li><a href="contact.html">Contact</a></li>
-							<li class="btn-cta"><a href="#"><span>Login</span></a></li>
+						
 							
 						</ul>
 					</div>
@@ -94,7 +433,7 @@
 	<aside id="fh5co-hero">
 		<div class="flexslider">
 			<ul class="slides">
-		   	<li style="background-image: url(/images/Screenshot\ 2025-03-08\ 223210.png);">
+		   	<li style="background-image: url(/images/Screenshot\ 2025-03-08\ 223210.png); background-size: 100% 100%;">
 		   		<div class="overlay-gradient"></div>
 		   		<div class="container">
 		   			<div class="row">
@@ -110,23 +449,35 @@
 		  	</ul>
 	  	</div>
 	</aside>
-
-	<div id="fh5co-about">
-		<div class="container">
-			<div class="col-md-6 animate-box">
-				<span>About Our University</span>
-				<h2>Welcome to Education Website</h2>
-				<p>Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat cauctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per Mauris in erat justo.</p>
-				<p>Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit. Sed ut imperdiet nisi. Proin condimentum fermentum nunc. Etiam pharetra, erat sed.</p>
-				<p>Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat cauctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per Mauris in erat justo.</p>
-			</div>
-			<div class="col-md-6">
-				<img class="img-responsive" src="images/img_bg_2.jpg" alt="Free HTML5 Bootstrap Template">
-			</div>
+	<section class="horizontal-section">
+		<div class="row">
+		  <div class="col-md-6 image-column">
+			<img src="/images/Screenshot 2025-03-08 223308.png" alt="Image" class="img-responsive">
+		  </div>
+		  <div class="col-md-6 text-column">
+			<h2 style="text-align: center;">Heading</h2>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis ex. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+		  </div>
 		</div>
-	</div>
+	  </section>
+	  
+      <div class="school-values">
+		<div class="motto-block">
+		  <h2>Motto</h2>
+		  <p>"Empowering minds, enriching lives."</p>
+		</div>
+		<div class="mission-block">
+		  <h2>Mission</h2>
+		  <p>To provide a nurturing environment that fosters academic excellence, creativity, and social responsibility.</p>
+		</div>
+		<div class="vision-block">
+		  <h2>Vision</h2>
+		  <p>To be a leading institution that inspires students to become compassionate, innovative, and responsible global citizens.</p>
+		</div>
+	  </div>
+	  
 
-    <h1>HISTORY</h1>
+    <h1 style="margin-top: 20px;">HISTORY</h1>
     
     <div class="timeline">
 		<div class="timeline-line"></div>
@@ -156,6 +507,66 @@
         "Swerve, Spiral, and Soar"
     </div>
 
+<!-- Pre-Primary Section -->
+<div class="section-header" style="background-color: lightgray;">
+	<h2>Pre-Primary School Fees</h2>
+  </div>
+  <div class="card-row pre-primary">
+	<div class="card pp1">
+	  <div class="card-header"><h3>PP1</h3></div>
+	  <div class="card-body"><p>School Fees: $200</p></div>
+	</div>
+	<div class="card pp2">
+	  <div class="card-header"><h3>PP2</h3></div>
+	  <div class="card-body"><p>School Fees: $220</p></div>
+	</div>
+	<div class="card pp3">
+	  <div class="card-header"><h3>PP3</h3></div>
+	  <div class="card-body"><p>School Fees: $240</p></div>
+	</div>
+  </div>
+  
+  <!-- Primary Section -->
+  <div class="section-header">
+	<h2>Primary School Fees</h2>
+  </div>
+  <div class="card-row primary">
+	<div class="card p1">
+	  <div class="card-header"><h3>P1</h3></div>
+	  <div class="card-body"><p>School Fees: $250</p></div>
+	</div>
+	<div class="card p2">
+	  <div class="card-header"><h3>P2</h3></div>
+	  <div class="card-body"><p>School Fees: $300</p></div>
+	</div>
+	<div class="card p3">
+	  <div class="card-header"><h3>P3</h3></div>
+	  <div class="card-body"><p>School Fees: $350</p></div>
+	</div>
+  </div>
+  <div class="card-row primary">
+	<div class="card p4">
+	  <div class="card-header"><h3>P4</h3></div>
+	  <div class="card-body"><p>School Fees: $400</p></div>
+	</div>
+	<div class="card p5">
+	  <div class="card-header"><h3>P5</h3></div>
+	  <div class="card-body"><p>School Fees: $450</p></div>
+	</div>
+	<div class="card p6">
+	  <div class="card-header"><h3>P6</h3></div>
+	  <div class="card-body"><p>School Fees: $500</p></div>
+	</div>
+  </div>
+  <div class="card-row primary p7-row">
+	<div class="card p7">
+	  <div class="card-header"><h3>P7</h3></div>
+	  <div class="card-body"><p>School Fees: $550</p></div>
+	</div>
+  </div>
+  
+</div>
+  
 	<div id="fh5co-counter" class="fh5co-counters" style="background-image: url(/images/Screenshot\ 2025-03-08\ 223308.png);" data-stellar-background-ratio="0.5">
 		<div class="overlay"></div>
 		<div class="container">
@@ -187,8 +598,6 @@
 			</div>
 		</div>
 	</div>
-
-	
 
 	<footer id="fh5co-footer" role="contentinfo" style="background-image: url(images/img_bg_4.jpg);">
 		<div class="overlay"></div>
