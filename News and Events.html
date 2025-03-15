@@ -54,7 +54,432 @@
 	<!--[if lt IE 9]>
 	<script src="js/respond.min.js"></script>
 	<![endif]-->
+  <style>
 
+	/* speeches */
+	.leadership-showcase {
+  font-family: Arial, sans-serif;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Individual leadership entry styling */
+.leadership-entry {
+  display: flex;
+  margin-bottom: 40px;
+  border-bottom: 1px solid #e0e0e0;
+  padding-bottom: 30px;
+}
+
+.leadership-entry:last-child {
+  border-bottom: none;
+}
+
+/* Image area styling */
+.leader-image-area {
+  flex: 0 0 300px;
+  margin-right: 30px;
+}
+
+.leader-portrait {
+  width: 100%;
+  border-radius: 5px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Text content styling */
+.leader-speech-area {
+  flex: 1;
+}
+
+.leader-title {
+  color: #1a365d;
+  margin-top: 0;
+  border-bottom: 2px solid #4a90e2;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+.leader-message {
+  line-height: 1.6;
+  color: #333;
+}
+
+/* Specific styling for different roles */
+.headmaster-profile .leader-title {
+  color: #1a365d;
+}
+
+.deputy-profile .leader-title {
+  color: #2a4a7d;
+}
+
+.first-teacher .leader-title {
+  color: #3a5d9d;
+}
+
+.second-teacher .leader-title {
+  color: #4a6fbd;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .leadership-entry {
+    flex-direction: column;
+  }
+  
+  .leader-image-area {
+    margin-right: 0;
+    margin-bottom: 20px;
+    flex: none;
+    width: 100%;
+    max-width: 300px;
+  }
+}
+ /* events cards  */
+.events-showcase {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.events-heading {
+  text-align: center;
+  color: #2a4a7d;
+  margin-bottom: 30px;
+  font-size: 32px;
+  position: relative;
+}
+
+.events-heading:after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: #4a90e2;
+  margin: 15px auto 0;
+}
+
+.events-collection {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+/* Individual Event Card Styling */
+.event-card {
+  width: 340px;
+  height: 280px;
+  perspective: 1000px;
+  position: relative;
+}
+
+.event-front,
+.event-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  transition: transform 0.8s;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.event-front {
+  background: white;
+  display: flex;
+  padding: 20px;
+  transform: rotateY(0deg);
+  z-index: 2;
+}
+
+.event-back {
+  transform: rotateY(180deg);
+  background: #2a4a7d;
+  color: white;
+}
+
+/* Hover/Click Effect */
+.event-card:hover .event-front,
+.event-card:focus .event-front {
+  transform: rotateY(-180deg);
+}
+
+.event-card:hover .event-back,
+.event-card:focus .event-back {
+  transform: rotateY(0deg);
+}
+
+/* Make card focusable for accessibility */
+.event-card {
+  cursor: pointer;
+  outline: none;
+}
+
+/* Front Card Content */
+.event-date {
+  background: #4a90e2;
+  color: white;
+  border-radius: 6px;
+  padding: 10px;
+  text-align: center;
+  min-width: 60px;
+  height: fit-content;
+}
+
+.event-month {
+  display: block;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.event-day {
+  display: block;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.event-details {
+  flex: 1;
+  padding-left: 15px;
+}
+
+.event-title {
+  margin-top: 0;
+  color: #2a4a7d;
+  font-size: 18px;
+}
+
+.event-description {
+  color: #555;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.event-prompt {
+  color: #4a90e2;
+  font-weight: bold;
+  font-size: 14px;
+  display: block;
+}
+
+/* Back Card Content */
+.event-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.7;
+}
+
+.event-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 20px;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+}
+
+.event-back .event-title {
+  color: white;
+  margin-bottom: 8px;
+}
+
+.event-time,
+.event-location {
+  margin: 5px 0;
+  font-size: 14px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .events-collection {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .event-card {
+    width: 100%;
+    max-width: 340px;
+  }
+}
+
+.student-showcase {
+  display: flex;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+/* Individual Article Styling */
+.student-publication {
+  flex: 1;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  position: relative;
+  padding-bottom: 80px; /* Space for author info */
+}
+
+.publication-content {
+  padding: 25px;
+}
+
+.publication-heading {
+  color: #2a4a7d;
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-size: 22px;
+  position: relative;
+}
+
+.publication-heading:after {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 3px;
+  background: #4a90e2;
+  margin: 10px 0 0;
+}
+
+.publication-text {
+  color: #444;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+/* Author Section Styling */
+.author-showcase {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #f9f9f9;
+  padding: 0 20px 15px;
+  text-align: center;
+}
+
+.author-portrait-wrapper {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  margin: -35px auto 10px;
+  border: 4px solid white;
+  overflow: hidden;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  background-color: white;
+}
+
+.author-portrait {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.author-name {
+  margin: 0;
+  color: #2a4a7d;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .student-showcase {
+    flex-direction: column;
+  }
+  
+  .student-publication {
+    margin-bottom: 40px;
+  }
+  
+  .student-publication:last-child {
+    margin-bottom: 0;
+  }
+}
+
+/* prefectorial body */
+.leadership-section {
+    max-width: 1200px;
+    margin: 20px auto;
+    text-align: center;
+    padding: 10px;
+  }
+
+  .section-title {
+    font-size: 26px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #2c3e50;
+  }
+
+  .leadership-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    padding: 10px;
+  }
+
+  .leadership-profile {
+    background: #ffffff;
+    padding: 12px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+    border: 1px solid #ddd;
+  }
+
+  .leadership-profile:hover {
+    transform: translateY(-5px);
+  }
+
+  .leader-image {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px; /* Keeps images rectangular with slightly rounded edges */
+  }
+
+  .leader-name {
+    font-size: 18px;
+    font-weight: bold;
+    color: #34495e;
+    margin-top: 10px;
+  }
+
+  .leader-class {
+    font-size: 16px;
+    color: #666;
+  }
+
+  /* Responsive Grid Layout */
+  @media (max-width: 1024px) {
+    .leadership-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .leadership-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 480px) {
+    .leadership-grid {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+
+  </style>
 	</head>
 	<body>
 		
@@ -74,7 +499,7 @@
 							<li><a href="index.html">Home</a></li>
 							<li><a href="about.html">About</a></li>
 							<li><a href="Academics.html">Academics</a></li>
-							<li class="active"><a href="index.html">News and Events</a></li>
+							<li class="active"><a href="News and Events.html">News and Events</a></li>
 							
 							<li><a href="index.html">Admissions</a></li>
 							<li><a href="Gallery.html">Gallery</a></li>
@@ -108,148 +533,231 @@
 		  	</ul>
 	  	</div>
 	</aside>
-	
-	<div id="fh5co-staff">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-3 text-center">
-					<div class="staff">
-						<div class="staff-img" style="background-image: url(images/staff-1.jpg);">
-							<ul class="fh5co-social">
-								<li><a href="#"><i class="icon-facebook2"></i></a></li>
-								<li><a href="#"><i class="icon-twitter2"></i></a></li>
-								<li><a href="#"><i class="icon-dribbble2"></i></a></li>
-								<li><a href="#"><i class="icon-github"></i></a></li>
-							</ul>
-						</div>
-						<span>Health Teacher</span>
-						<h3><a href="#">Mike Smith</a></h3>
-						<p>Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit. Sed ut imperdiet nisi.</p>
-					</div>
-				</div>
-				<div class="col-md-3 animate-box text-center">
-					<div class="staff">
-						<div class="staff-img" style="background-image: url(images/staff-2.jpg);">
-							<ul class="fh5co-social">
-								<li><a href="#"><i class="icon-facebook2"></i></a></li>
-								<li><a href="#"><i class="icon-twitter2"></i></a></li>
-								<li><a href="#"><i class="icon-dribbble2"></i></a></li>
-								<li><a href="#"><i class="icon-github"></i></a></li>
-							</ul>
-						</div>
-						<span>Health Teacher</span>
-						<h3><a href="#">Mike Smith</a></h3>
-						<p>Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit. Sed ut imperdiet nisi.</p>
-					</div>
-				</div>
-				<div class="col-md-3 animate-box text-center">
-					<div class="staff">
-						<div class="staff-img" style="background-image: url(images/staff-3.jpg);">
-							<ul class="fh5co-social">
-								<li><a href="#"><i class="icon-facebook2"></i></a></li>
-								<li><a href="#"><i class="icon-twitter2"></i></a></li>
-								<li><a href="#"><i class="icon-dribbble2"></i></a></li>
-								<li><a href="#"><i class="icon-github"></i></a></li>
-							</ul>
-						</div>
-						<span>Health Teacher</span>
-						<h3><a href="#">Mike Smith</a></h3>
-						<p>Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit. Sed ut imperdiet nisi.</p>
-					</div>
-				</div>
-				<div class="col-md-3 animate-box text-center">
-					<div class="staff">
-						<div class="staff-img" style="background-image: url(images/staff-1.jpg);">
-							<ul class="fh5co-social">
-								<li><a href="#"><i class="icon-facebook2"></i></a></li>
-								<li><a href="#"><i class="icon-twitter2"></i></a></li>
-								<li><a href="#"><i class="icon-dribbble2"></i></a></li>
-								<li><a href="#"><i class="icon-github"></i></a></li>
-							</ul>
-						</div>
-						<span>Health Teacher</span>
-						<h3><a href="#">Mike Smith</a></h3>
-						<p>Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit. Sed ut imperdiet nisi.</p>
-					</div>
-				</div>
-				<div class="col-md-3 animate-box text-center">
-					<div class="staff">
-						<div class="staff-img" style="background-image: url(images/staff-1.jpg);">
-							<ul class="fh5co-social">
-								<li><a href="#"><i class="icon-facebook2"></i></a></li>
-								<li><a href="#"><i class="icon-twitter2"></i></a></li>
-								<li><a href="#"><i class="icon-dribbble2"></i></a></li>
-								<li><a href="#"><i class="icon-github"></i></a></li>
-							</ul>
-						</div>
-						<span>Health Teacher</span>
-						<h3><a href="#">Mike Smith</a></h3>
-						<p>Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit. Sed ut imperdiet nisi.</p>
-					</div>
-				</div>
-				<div class="col-md-3 animate-box text-center">
-					<div class="staff">
-						<div class="staff-img" style="background-image: url(images/staff-3.jpg);">
-							<ul class="fh5co-social">
-								<li><a href="#"><i class="icon-facebook2"></i></a></li>
-								<li><a href="#"><i class="icon-twitter2"></i></a></li>
-								<li><a href="#"><i class="icon-dribbble2"></i></a></li>
-								<li><a href="#"><i class="icon-github"></i></a></li>
-							</ul>
-						</div>
-						<span>Health Teacher</span>
-						<h3><a href="#">Mike Smith</a></h3>
-						<p>Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit. Sed ut imperdiet nisi.</p>
-					</div>
-				</div>
-				<div class="col-md-3 animate-box text-center">
-					<div class="staff">
-						<div class="staff-img" style="background-image: url(images/staff-2.jpg);">
-							<ul class="fh5co-social">
-								<li><a href="#"><i class="icon-facebook2"></i></a></li>
-								<li><a href="#"><i class="icon-twitter2"></i></a></li>
-								<li><a href="#"><i class="icon-dribbble2"></i></a></li>
-								<li><a href="#"><i class="icon-github"></i></a></li>
-							</ul>
-						</div>
-						<span>Health Teacher</span>
-						<h3><a href="#">Mike Smith</a></h3>
-						<p>Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit. Sed ut imperdiet nisi.</p>
-					</div>
-				</div>
-				<div class="col-md-3 animate-box text-center">
-					<div class="staff">
-						<div class="staff-img" style="background-image: url(images/staff-3.jpg);">
-							<ul class="fh5co-social">
-								<li><a href="#"><i class="icon-facebook2"></i></a></li>
-								<li><a href="#"><i class="icon-twitter2"></i></a></li>
-								<li><a href="#"><i class="icon-dribbble2"></i></a></li>
-								<li><a href="#"><i class="icon-github"></i></a></li>
-							</ul>
-						</div>
-						<span>Health Teacher</span>
-						<h3><a href="#">Mike Smith</a></h3>
-						<p>Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit. Sed ut imperdiet nisi.</p>
-					</div>
-				</div>
-			</div>
+	<div class="leadership-showcase">
+		<!-- Headmaster Section -->
+		<div class="leadership-entry headmaster-profile">
+		  <div class="leader-image-area">
+			<img src="/api/placeholder/300/300" alt="Headmaster" class="leader-portrait">
+		  </div>
+		  <div class="leader-speech-area">
+			<h2 class="leader-title">Headmaster's Address</h2>
+			<p class="leader-message">
+			  Place the headmaster's speech here. This area can accommodate several paragraphs of text as needed. The layout will keep the image and text properly aligned regardless of content length.
+			</p>
+		  </div>
 		</div>
-	</div>
+	  
+		<!-- Deputy Headmaster Section -->
+		<div class="leadership-entry deputy-profile">
+		  <div class="leader-image-area">
+			<img src="/api/placeholder/300/300" alt="Deputy Headmaster" class="leader-portrait">
+		  </div>
+		  <div class="leader-speech-area">
+			<h2 class="leader-title">Deputy Headmaster's Message</h2>
+			<p class="leader-message">
+			  Place the deputy headmaster's speech here. This follows the same layout pattern as the headmaster's section for visual consistency while maintaining distinct identity through unique class names.
+			</p>
+		  </div>
+		</div>
+		
+		<!-- First Teacher Section -->
+		<div class="leadership-entry teacher-profile first-teacher">
+		  <div class="leader-image-area">
+			<img src="/api/placeholder/300/300" alt="Teacher One" class="leader-portrait">
+		  </div>
+		  <div class="leader-speech-area">
+			<h2 class="leader-title">Teacher's Perspective</h2>
+			<p class="leader-message">
+			  Place the first teacher's speech here. This section maintains the same structural pattern while being separately identifiable in your stylesheet.
+			</p>
+		  </div>
+		</div>
+		
+		<!-- Second Teacher Section -->
+		<div class="leadership-entry teacher-profile second-teacher">
+		  <div class="leader-image-area">
+			<img src="/api/placeholder/300/300" alt="Teacher Two" class="leader-portrait">
+		  </div>
+		  <div class="leader-speech-area">
+			<h2 class="leader-title">Teacher's Insights</h2>
+			<p class="leader-message">
+			  Place the second teacher's speech here. This completes the leadership showcase with consistent styling but unique identifiers.
+			</p>
+		  </div>
+		</div>
+	  </div>
 
-	<div id="fh5co-register" style="background-image: url(images/img_bg_2.jpg);">
-		<div class="overlay"></div>
-		<div class="row">
-			<div class="col-md-8 col-md-offset-2 animate-box">
-				<div class="date-counter text-center">
-					<h2>Get 400 of Online Courses for Free</h2>
-					<h3>By Mike Smith</h3>
-					<div class="simply-countdown simply-countdown-one"></div>
-					<p><strong>Limited Offer, Hurry Up!</strong></p>
-					<p><a href="#" class="btn btn-primary btn-lg btn-reg">Register Now!</a></p>
-				</div>
+	  <div class="events-showcase">
+		<h2 class="events-heading">Upcoming Important Events</h2>
+		
+		<div class="events-collection">
+		  <!-- First Event Card -->
+		  <div class="event-card">
+			<div class="event-front">
+			  <div class="event-date">
+				<span class="event-month">APR</span>
+				<span class="event-day">15</span>
+			  </div>
+			  <div class="event-details">
+				<h3 class="event-title">Annual Sports Day</h3>
+				<p class="event-description">Join us for our annual sports competition featuring track events, team sports, and athletic showcases.</p>
+				<span class="event-prompt">Click for details</span>
+			  </div>
 			</div>
+			<div class="event-back">
+			  <img src="/api/placeholder/500/300" alt="Sports Day" class="event-image">
+			  <div class="event-overlay">
+				<h3 class="event-title">Annual Sports Day</h3>
+				<p class="event-time">9:00 AM - 4:00 PM</p>
+				<p class="event-location">School Main Ground</p>
+			  </div>
+			</div>
+		  </div>
+		  
+		  <!-- Second Event Card -->
+		  <div class="event-card">
+			<div class="event-front">
+			  <div class="event-date">
+				<span class="event-month">MAY</span>
+				<span class="event-day">10</span>
+			  </div>
+			  <div class="event-details">
+				<h3 class="event-title">Science Exhibition</h3>
+				<p class="event-description">Students showcase their scientific projects and innovations in our annual science exhibition.</p>
+				<span class="event-prompt">Click for details</span>
+			  </div>
+			</div>
+			<div class="event-back">
+			  <img src="/api/placeholder/500/300" alt="Science Exhibition" class="event-image">
+			  <div class="event-overlay">
+				<h3 class="event-title">Science Exhibition</h3>
+				<p class="event-time">10:00 AM - 2:00 PM</p>
+				<p class="event-location">School Auditorium</p>
+			  </div>
+			</div>
+		  </div>
+		  
+		  <!-- Third Event Card -->
+		  <div class="event-card">
+			<div class="event-front">
+			  <div class="event-date">
+				<span class="event-month">JUN</span>
+				<span class="event-day">22</span>
+			  </div>
+			  <div class="event-details">
+				<h3 class="event-title">Graduation Ceremony</h3>
+				<p class="event-description">Celebrating our graduating class with awards, speeches, and recognition of achievements.</p>
+				<span class="event-prompt">Click for details</span>
+			  </div>
+			</div>
+			<div class="event-back">
+			  <img src="/api/placeholder/500/300" alt="Graduation Ceremony" class="event-image">
+			  <div class="event-overlay">
+				<h3 class="event-title">Graduation Ceremony</h3>
+				<p class="event-time">5:00 PM - 8:00 PM</p>
+				<p class="event-location">Main Hall</p>
+			  </div>
+			</div>
+		  </div>
 		</div>
-	</div>
+	  </div>
+
+	  <div class="leadership-section">
+		<h2 class="section-title">Prefectorial Body</h2>
+		<div class="leadership-grid">
+		  <div class="leadership-profile">
+			<img src="/images/Screenshot 2025-03-08 223308.png" alt="John Doe" class="leader-image">
+			<p class="leader-name">John Doe</p>
+			<p class="leader-class">Class: 8A</p>
+		  </div>
+		  <div class="leadership-profile">
+			<img src="prefect2.jpg" alt="Jane Smith" class="leader-image">
+			<p class="leader-name">Jane Smith</p>
+			<p class="leader-class">Class: 7B</p>
+		  </div>
+		  <div class="leadership-profile">
+			<img src="prefect3.jpg" alt="Michael Johnson" class="leader-image">
+			<p class="leader-name">Michael Johnson</p>
+			<p class="leader-class">Class: 8C</p>
+		  </div>
+		  <div class="leadership-profile">
+			<img src="prefect4.jpg" alt="Emily Davis" class="leader-image">
+			<p class="leader-name">Emily Davis</p>
+			<p class="leader-class">Class: 7A</p>
+		  </div>
+		  <div class="leadership-profile">
+			<img src="prefect5.jpg" alt="David Wilson" class="leader-image">
+			<p class="leader-name">David Wilson</p>
+			<p class="leader-class">Class: 8B</p>
+		  </div>
+		  <div class="leadership-profile">
+			<img src="prefect6.jpg" alt="Sarah Brown" class="leader-image">
+			<p class="leader-name">Sarah Brown</p>
+			<p class="leader-class">Class: 7C</p>
+		  </div>
+		  <div class="leadership-profile">
+			<img src="prefect7.jpg" alt="James Anderson" class="leader-image">
+			<p class="leader-name">James Anderson</p>
+			<p class="leader-class">Class: 8A</p>
+		  </div>
+		  <div class="leadership-profile">
+			<img src="prefect8.jpg" alt="Olivia Thomas" class="leader-image">
+			<p class="leader-name">Olivia Thomas</p>
+			<p class="leader-class">Class: 7B</p>
+		  </div>
+		  <div class="leadership-profile">
+			<img src="prefect9.jpg" alt="Daniel White" class="leader-image">
+			<p class="leader-name">Daniel White</p>
+			<p class="leader-class">Class: 8C</p>
+		  </div>
+		  <div class="leadership-profile">
+			<img src="prefect10.jpg" alt="Sophia Martinez" class="leader-image">
+			<p class="leader-name">Sophia Martinez</p>
+			<p class="leader-class">Class: 7A</p>
+		  </div>
+		</div>
+	  </div>
+
+	  <div class="student-showcase">
+		<!-- First Student Article -->
+		<article class="student-publication">
+		  <div class="publication-content">
+			<h2 class="publication-heading">Article Title Goes Here</h2>
+			<p class="publication-text">
+			  This is where the first student's article content will go. You can place several paragraphs of text in this section. The article should discuss topics of interest, research findings, or creative writing pieces that showcase the student's talents and academic abilities.
+			</p>
+			<p class="publication-text">
+			  Continue with more paragraphs as needed. This layout will maintain consistent spacing and presentation regardless of content length between the two student articles.
+			</p>
+		  </div>
+		  <div class="author-showcase">
+			<div class="author-portrait-wrapper">
+			  <img src="/api/placeholder/100/100" alt="Student Author" class="author-portrait">
+			</div>
+			<h3 class="author-name">Student Name</h3>
+		  </div>
+		</article>
+	  
+		<!-- Second Student Article -->
+		<article class="student-publication">
+		  <div class="publication-content">
+			<h2 class="publication-heading">Second Article Title</h2>
+			<p class="publication-text">
+			  This is where the second student's article content will go. Similar to the first article, you can include multiple paragraphs that present the student's ideas, research, or creative work in a clear and engaging format.
+			</p>
+			<p class="publication-text">
+			  The design ensures that both articles receive equal visual weight and attention on the page, allowing readers to appreciate each contribution fully.
+			</p>
+		  </div>
+		  <div class="author-showcase">
+			<div class="author-portrait-wrapper">
+			  <img src="/api/placeholder/100/100" alt="Student Author" class="author-portrait">
+			</div>
+			<h3 class="author-name">Another Student</h3>
+		  </div>
+		</article>
+	  </div>
+	  
 
 	<footer id="fh5co-footer" role="contentinfo" style="background-image: url(images/img_bg_4.jpg);">
 		<div class="overlay"></div>
