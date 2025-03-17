@@ -95,6 +95,7 @@ h1, h2, h3, h4, h5, h6, figure {
   padding: 0;
   z-index: 1001;
   position:fixed;
+  background: rgba(0, 0, 0, 0.2);
 }
 .fh5co-nav .top-menu {
   padding: 22px 0;
@@ -130,7 +131,7 @@ h1, h2, h3, h4, h5, h6, figure {
   color: rgba(0, 0, 0, 0.6);
   font-size: 13px;
   letter-spacing: 0px;
-  border-left: 1px solid rgba(0, 0, 0, 0.08);
+  border-left: 1px solid rgba(0, 0, 0, 0.15);
 }
 .fh5co-nav .top .fh5co-social {
   margin: 0;
@@ -227,6 +228,12 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 .fh5co-nav ul li.active > a {
   font-weight: bolder;
+}
+
+@media (max-width: 768px) {
+  .fh5co-nav {
+    background: transparent !important;
+  }
 }
 
 #fh5co-hero {
@@ -379,59 +386,6 @@ h1, h2, h3, h4, h5, h6, figure {
   }
 }
 
-.services {
-  width: 95%;
-  margin: 0 auto;
-  margin-bottom: 40px;
-  position: relative;
-  -webkit-transition: 0.3s;
-  -o-transition: 0.3s;
-  transition: 0.3s;
-}
-.services h3 {
-  font-size: 18px;
-  font-weight: 400;
-}
-.services h3 a {
-  color: #000;
-}
-.services .icon {
-  width: 90px;
-  height: 90px;
-  background: rgba(0, 0, 0, 0.04);
-  display: table;
-  text-align: center;
-  margin: 0 auto;
-  margin-bottom: 30px;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  -ms-border-radius: 50%;
-  border-radius: 50%;
-  -webkit-transition: 0.3s;
-  -o-transition: 0.3s;
-  transition: 0.3s;
-}
-@media screen and (max-width: 992px) {
-  .services .icon {
-    margin: 0 auto 30px auto;
-  }
-}
-.services .icon i {
-  display: table-cell;
-  vertical-align: middle;
-  font-size: 40px;
-  line-height: 40px;
-  color: #000;
-  -webkit-transition: 0.3s;
-  -o-transition: 0.3s;
-  transition: 0.3s;
-}
-.services:hover .icon, .services:focus .icon {
-  background: #2D6CDF;
-}
-.services:hover .icon i, .services:focus .icon i {
-  color: #fff;
-}
 
 .fh5co-counters {
   padding: 7em 0;
