@@ -298,6 +298,7 @@ h1, h2, h3, h4, h5, h6, figure {
   min-height: 630px;
   height: 630px;
   z-index: 9;
+  
 }
 #fh5co-hero .flexslider .slider-text > .slider-text-inner {
   display: table-cell;
@@ -862,7 +863,8 @@ h1, h2, h3, h4, h5, h6, figure {
   position: absolute;
   z-index: 1901;
   width: 270px;
-  background: black;
+  background: rgba(0, 0, 0, 0.5); /* Adjust the last value (0.5) for transparency */
+
   top: 0;
   right: 0;
   top: 0;
@@ -892,7 +894,10 @@ h1, h2, h3, h4, h5, h6, figure {
   transform: translateX(0px);
 }
 #fh5co-offcanvas a {
-  color: rgba(255, 255, 255, 0.5);
+  color: white;
+  font-weight: bold;
+  font-family: sans-serif;
+  font-size: larger;
 }
 #fh5co-offcanvas a:hover {
   color: rgba(255, 255, 255, 0.8);

@@ -66,69 +66,107 @@
             margin: 0 auto;
         }
         
-        .student-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-            margin: 40px 0;
-            padding: 0 15px;
-        }
-        
-        .student-card {
-            width: calc(20% - 20px);
-            background: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        
-        .student-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-        }
-        
-        .student-image {
-            height: 200px;
-            overflow: hidden;
-            position: relative;
-        }
-        
-        .student-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-        
-        .student-card:hover .student-image img {
-            transform: scale(1.1);
-        }
-        
-        .student-details {
-            padding: 15px;
-            text-align: center;
-        }
-        
-        .student-name {
-            font-size: 18px;
-            font-weight: 600;
-            margin-bottom: 5px;
-            color: #333;
-        }
-        
-        .student-grade {
-            color: #e74c3c;
-            font-weight: 600;
-            font-size: 16px;
-            margin-bottom: 5px;
-        }
-        
-        .student-class {
-            color: #666;
-            font-size: 14px;
-        }
+       /* Reset any potential conflicting styles */
+.student-container * {
+  box-sizing: border-box;
+}
+
+/* Container styling with important display property */
+.student-container {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  justify-content: center !important;
+  gap: 20px;
+  margin: 30px 0;
+  width: 100%;
+}
+
+/* Card styling with explicit width */
+.student-card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  width: calc(20% - 16px) !important; /* 5 cards per row on laptop (with gap) */
+  margin: 0 !important; /* Remove any default margins */
+  float: none !important; /* Remove any floating */
+  display: block !important;
+  flex: 0 0 auto !important;
+}
+
+.student-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Image styling */
+.student-image {
+  height: 200px;
+  overflow: hidden;
+}
+
+.student-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Student details styling */
+.student-details {
+  padding: 15px;
+  text-align: center;
+}
+
+.student-name {
+  font-weight: bold;
+  font-size: 18px;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.student-grade {
+  color: #e74c3c;
+  font-weight: 600;
+  margin-bottom: 3px;
+}
+
+.student-class {
+  color: #7f8c8d;
+}
+
+/* Responsive design for tablets */
+@media screen and (max-width: 1024px) {
+  .student-card {
+    width: calc(33.33% - 16px) !important; /* 3 cards per row on tablet */
+  }
+}
+
+/* Responsive design for small tablets */
+@media screen and (max-width: 768px) {
+  .student-card {
+    width: calc(50% - 16px) !important; /* 2 cards per row on small tablet */
+  }
+}
+
+/* Responsive design for phones */
+@media screen and (max-width: 480px) {
+  .student-container {
+    gap: 15px;
+  }
+  
+  .student-card {
+    width: calc(50% - 12px) !important; /* 2 cards per row on phone */
+  }
+  
+  .student-image {
+    height: 150px;
+  }
+  
+  .student-name {
+    font-size: 16px;
+  }
+}
         /* performancesection */
         .performance-section {
             background-color: #fff9f9;
