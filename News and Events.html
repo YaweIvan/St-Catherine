@@ -511,6 +511,36 @@
   }
 }
 
+/* socialmedia */
+.social-media {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+		margin-bottom: 20px;
+    }
+
+    .social-icon {
+        background-color: white; /* White background for visibility */
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.3); /* Soft glow effect */
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .social-icon img {
+        width: 30px;
+        height: 30px;
+    }
+
+    .social-icon:hover {
+        transform: scale(1.2);
+        background-color: #f0f0f0; /* Lighten background on hover */
+    }
+
   </style>
 	</head>
 	<body>
@@ -795,10 +825,7 @@
 		<div class="overlay"></div>
 		<div class="container">
 			<div class="row row-pb-md">
-				<div class="col-md-3 fh5co-widget">
-					<h3>About Education</h3>
-					<p>Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit. Eos cumque dicta adipisci architecto culpa amet.</p>
-				</div>
+				
 				<div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1 fh5co-widget">
 					<h3>Learning</h3>
 					<ul class="fh5co-footer-links">
@@ -845,10 +872,22 @@
 
 			<div class="row copyright">
 				<div class="col-md-12 text-center">
-					<p>
-						<small class="block">&copy; 2016 Free HTML5. All Rights Reserved.</small> 
-						<small class="block">Designed by <a href="http://freehtml5.co/" target="_blank">FreeHTML5.co</a> Demo Images: <a href="http://unsplash.co/" target="_blank">Unsplash</a> &amp; <a href="https://www.pexels.com/" target="_blank">Pexels</a></small>
-					</p>
+					<div class="social-media">
+						<!-- WhatsApp -->
+						<a href="https://wa.me/1234567890" target="_blank" class="social-icon whatsapp">
+							<img src="https://cdn-icons-png.flaticon.com/512/124/124034.png" alt="WhatsApp">
+						</a>
+				
+						<!-- Email -->
+						<a href="mailto:school@example.com" class="social-icon email">
+							<img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email">
+						</a>
+				
+						<!-- Facebook -->
+						<a href="https://facebook.com/schoolpage" target="_blank" class="social-icon facebook">
+							<img src="https://cdn-icons-png.flaticon.com/512/124/124010.png" alt="Facebook">
+						</a>
+					</div>
 				</div>
 			</div>
 
