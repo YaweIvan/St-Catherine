@@ -273,51 +273,69 @@
   }
 }
 
-.school-values {
-  display: flex;
-  padding: 20px;
-  background-color: antiquewhite;
-  flex-wrap: wrap;
-  justify-content: space-around;
-}
+ .school-values {
+            display: flex;
+            padding: 20px;
+            background-color: antiquewhite;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
 
-.motto-block, .mission-block, .vision-block {
-  flex-basis: 30%;
-  margin: 20px;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease-in-out;
-}
+        .values-wrapper {
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            gap: 20px;
+        }
 
-.motto-block {
-  background-color: grey; /*grey*/
-  color: #fff;
-}
+        .motto-block, .mission-block, .vision-block {
+            flex: 1;
+            margin: 10px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+        }
 
-.mission-block {
-  background-color: #34a85a; /* green */
-  color: #fff;
-}
+        .motto-block {
+            background-color: grey;
+            color: #fff;
+        }
 
-.vision-block {
-  background-color: maroon; /* gray */
-  color: #fff;
-}
+        .mission-block {
+            background-color: #34a85a;
+            color: #fff;
+        }
 
-.motto-block:hover, .mission-block:hover, .vision-block:hover {
-  transform: scale(1.05);
-}
+        .vision-block {
+            background-color: maroon;
+            color: #fff;
+        }
 
-h2 {
-  margin-bottom: 10px;
-  text-align: center;
-}
+        .motto-block:hover, .mission-block:hover, .vision-block:hover {
+            transform: scale(1.05);
+        }
 
-p {
-  font-size: 16px;
-  line-height: 1.5;
-}
+        h2 {
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        @media (max-width: 768px) {
+            .values-wrapper {
+                flex-direction: column;
+            }
+
+            .motto-block, .mission-block, .vision-block {
+                width: 100%;
+                margin: 10px 0;
+            }
+        }
 
 /* Media queries to adjust layout on smaller screens */
 
