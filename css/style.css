@@ -798,53 +798,67 @@ h1, h2, h3, h4, h5, h6, figure {
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
 }
-
-#fh5co-gallery {
-  padding-top: 2.5em;
-}
-#fh5co-gallery h2 {
-  font-size: 14px;
-  text-transform: uppercase;
-  margin-bottom: 2.5em;
-  font-family: "Source Sans Pro", Arial, sans-serif;
-  font-weight: 700;
-  letter-spacing: 2px;
-}
-#fh5co-gallery h2 span {
-  border: 2px solid rgba(0, 0, 0, 0.8);
-  padding: 10px 15px;
-  position: relative;
-}
-#fh5co-gallery h2 span:before, #fh5co-gallery h2 span:after {
-  position: absolute;
-  top: 18px;
-  bottom: 0;
-  content: '';
-  width: 100px;
-  height: 1px;
-  background: rgba(0, 0, 0, 0.1);
-}
-#fh5co-gallery h2 span:before {
-  lett: 0;
-  margin-left: -125px;
-}
-#fh5co-gallery h2 span:after {
-  right: 0;
-  margin-right: -110px;
+.image-grid {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  background-color: #f8f8f8;
 }
 
-.gallery {
-  display: block;
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  position: relative;
-  height: 300px;
+.image-panel {
+  flex: 1;
+  max-width: 25%;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  border-radius: 6px;
+  box-shadow: 0 3px 5px rgba(0,0,0,0.1);
 }
-.gallery:hover {
-  -webkit-box-shadow: inset 0px 0px 124px 11px rgba(0, 0, 0, 0.74);
-  -moz-box-shadow: inset 0px 0px 124px 11px rgba(0, 0, 0, 0.74);
-  box-shadow: inset 0px 0px 124px 11px rgba(0, 0, 0, 0.74);
+
+.image-panel img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.image-panel:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+.image-panel:hover img {
+  transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+  .image-grid {
+      overflow-x: auto;
+      white-space: nowrap;
+  }
+
+  .image-panel {
+      display: inline-block;
+      max-width: 120px;
+      margin-right: 10px;
+  }
+
+  .image-panel img {
+      height: 100px;
+  }
+}
+
+@media (max-width: 480px) {
+  .image-panel {
+      max-width: 80px;
+      margin-right: 5px;
+  }
+
+  .image-panel img {
+      height: 80px;
+  }
 }
 
 #fh5co-footer {
