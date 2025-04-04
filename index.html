@@ -190,6 +190,7 @@ margin-bottom: 30PX;
 .img-fluid {
     width: 100%;
     transition: transform 0.3s ease;
+	border-radius: 10px;
 }
 
 .content-col:hover .img-fluid {
@@ -265,7 +266,88 @@ margin-bottom: 30PX;
     .social-icon:hover {
         transform: scale(1.2);
         background-color: #f0f0f0; /* Lighten background on hover */
+
     }
+
+	/* Base styles for animated elements */
+	.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+
+  /* Class applied when element becomes visible */
+  .animate-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Different animation types */
+  .fade-in-up {
+    transform: translateY(30px);
+  }
+
+  .fade-in-left {
+    transform: translateX(-30px);
+  }
+
+  .fade-in-right {
+    transform: translateX(30px);
+  }
+
+  .zoom-in {
+    transform: scale(0.9);
+  }
+
+  .flip {
+    transform: rotateY(90deg);
+  }
+
+  /* Different animation delays */
+  .delay-100 { transition-delay: 0.1s; }
+  .delay-200 { transition-delay: 0.2s; }
+  .delay-300 { transition-delay: 0.3s; }
+  .delay-400 { transition-delay: 0.4s; }
+  .delay-500 { transition-delay: 0.5s; }
+
+
+  .image-container {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.image-container img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  animation: slideshow 16s infinite;
+}
+
+/* Target each image with delay to alternate slides */
+.image-container img:nth-child(1) {
+  animation-delay: 0s;
+}
+.image-container img:nth-child(2) {
+  animation-delay: 4s;
+}
+.image-container img:nth-child(3) {
+  animation-delay: 8s;
+}
+.image-container img:nth-child(4) {
+  animation-delay: 12s;
+}
+
+@keyframes slideshow {
+  0% { opacity: 0; }
+  5% { opacity: 1; }
+  25% { opacity: 1; }
+  30% { opacity: 0; }
+  100% { opacity: 0; }
+}
 
 	  </style>
 	</head>
@@ -307,132 +389,162 @@ margin-bottom: 30PX;
 	<aside id="fh5co-hero">
 		<div class="flexslider">
 			<ul class="slides">
-		   	<li style="background-image: url(/images/Screenshot\ 2025-03-08\ 223308.png);background-size:100% 100%;">
-		   		<div class="overlay-gradient"></div>
-		   		<div class="container">
-		   			<div class="row">
-			   			<div class="col-md-8 col-md-offset-2 text-center slider-text">
-			   				<div class="slider-text-inner">
-			   					<h1>We Help You to Learn New Things</h1>
-								<p><a class="btn btn-primary btn-lg" href="Admissions.html">APPLY NOW</a></p>
-			   				</div>
-			   			</div>
-			   		</div>
-		   		</div>
-		   	</li>
-		   	<li style="background-image: url(/images/Screenshot\ 2025-03-08\ 223353.png); background-size: 100% 100%; ">
-		   		<div class="overlay-gradient"></div>
-		   		<div class="container">
-		   			<div class="row">
-			   			<div class="col-md-8 col-md-offset-2 text-center slider-text">
-			   				<div class="slider-text-inner">
-			   					<h1 style="justify-content: center;" >We Help You to Learn New Things</h1>
+				<li style="background-image: url(/images/Screenshot\ 2025-03-08\ 223308.png);background-size:100% 100%;">
+					<div class="overlay-gradient"></div>
+					<div class="container">
+						<div class="row">
+							<div class="col-md-8 col-md-offset-2 text-center slider-text">
+								<div class="slider-text-inner animate-on-scroll fade-in-up">
+									<h1>We Help You to Learn New Things</h1>
+									<p><a class="btn btn-primary btn-lg" href="Admissions.html">APPLY NOW</a></p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li style="background-image: url(/images/Screenshot\ 2025-03-08\ 223353.png); background-size: 100% 100%; ">
+					<div class="overlay-gradient"></div>
+					<div class="container">
+						<div class="row">
+							<div class="col-md-8 col-md-offset-2 text-center slider-text">
+								<div class="slider-text-inner animate-on-scroll fade-in-up">
+									<h1 style="justify-content: center;">We Help You to Learn New Things</h1>
 									<p><a class="btn btn-primary btn-lg btn-learn" href="Admissions.html">APPLY NOW</a></p>
-			   				</div>
-			   			</div>
-			   		</div>
-		   		</div>
-		   	</li>
-		   	<li style="background-image: url(/images/Screenshot\ 2025-03-08\ 223210.png); background-size: 100% 100%;">
-		   		<div class="overlay-gradient"></div>
-		   		<div class="container">
-		   			<div class="row">
-			   			<div class="col-md-8 col-md-offset-2 text-center slider-text">
-			   				<div class="slider-text-inner">
-			   					<h1>We Help You to Learn New Things</h1>
-								<p><a class="btn btn-primary btn-lg btn-learn" href="Admissions.html">APPLY NOW</a></p>
-			   				</div>
-			   			</div>
-			   		</div>
-		   		</div>
-		   	</li>		   	
-		  	</ul>
-	  	</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li style="background-image: url(/images/Screenshot\ 2025-03-08\ 223210.png); background-size: 100% 100%;">
+					<div class="overlay-gradient"></div>
+					<div class="container">
+						<div class="row">
+							<div class="col-md-8 col-md-offset-2 text-center slider-text">
+								<div class="slider-text-inner animate-on-scroll fade-in-up">
+									<h1>We Help You to Learn New Things</h1>
+									<p><a class="btn btn-primary btn-lg btn-learn" href="Admissions.html">APPLY NOW</a></p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
 	</aside>
-
+	
 	<!-- About section -->
-    <div class="about-section" data-delay="800">
-        <div class="wrapper">
-            <div class="content-row">
-                <div class="content-col">
-                   
-                    <h2>Welcome to Education Website</h2>
-                    <p>Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat cauctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per Mauris in erat justo.</p>
-                    <p>Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit. Sed ut imperdiet nisi. Proin condimentum fermentum nunc. Etiam pharetra, erat sed.</p>
-                    <p>Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat cauctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per Mauris in erat justo.</p>
-                </div>
-
-                <div class="content-col">
-                    <img class="img-fluid" src="/images/Screenshot 2025-03-08 223353.png" alt="School image">
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-	<div class="wrapper">
-        <!-- Card grid with 6 cards (1 text + 5 image) -->
-        <div class="card-grid">
-            <!-- Text card as the first card -->
-            <div class="card text-card" data-delay="100">
-                <h1>SCHOOL VISION</h1>
-                <p>The school strives to always make its value live in the day-to-day experience of every member of the community</p>
-            </div>
-            
-            <!-- Image cards -->
-            <div class="card image-card" data-delay="200">
-                <img src="/images/Screenshot 2025-03-08 223210.png" alt="Students working on computers">
-                <div class="card-caption">How to Apply</div>
-            </div>
-            
-            <div class="card image-card" data-delay="300">
-                <img src="/api/placeholder/400/200" alt="Parent-teacher meeting in cafeteria">
-                <div class="card-caption">Parents' Involvement</div>
-            </div>
-            
-            <div class="card image-card" data-delay="400">
-                <img src="/images/Screenshot 2025-03-09 120711.png" alt="Pre-primary students reading">
-                <div class="card-caption">Pre-primary</div>
-            </div>
-            
-            <div class="card image-card" data-delay="500">
-                <img src="/api/placeholder/400/200" alt="Daycare activities">
-                <div class="card-caption">Day care</div>
-            </div>
-            
-            <div class="card image-card" data-delay="600">
-                <img src="/api/placeholder/400/200" alt="Swimming pool">
-                <div class="card-caption">Facilities</div>
-            </div>
-        </div>
-    </div>
-    
-	<div>
-		<h1 style="text-align: center; padding-top: 20px;">MORE FACTS</h1>	
+	<div class="about-section animate-on-scroll fade-in-up">
+		<div class="wrapper">
+			<div class="content-row">
+				<div class="content-col animate-on-scroll fade-in-left delay-20">
+					<h2>Welcome to St Catherine</h2>
+					<p>Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat cauctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per Mauris in erat justo.</p>
+					<p>Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit. Sed ut imperdiet nisi. Proin condimentum fermentum nunc. Etiam pharetra, erat sed.</p>
+					<p>Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat cauctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per Mauris in erat justo.</p>
+				</div>
+	
+				<div class="content-col animate-on-scroll fade-in-right delay-200">
+					<img class="img-fluid" src="/images/Screenshot 2025-03-08 223353.png" alt="School image">
+				</div>
+			</div>
+		</div>
 	</div>
 	
-	<div id="fh5co-counter" class="fh5co-counters" style="background-image: url(/images/Screenshot\ 2025-03-08\ 223308.png);" data-stellar-background-ratio="0.5">
+	
+	<div class="card-grid animate-on-scroll zoom-in delay-100">
+
+		<!-- Text Card -->
+		<div class="card text-card animate-on-scroll zoom-in delay-200">
+		  <h1>SCHOOL VISION</h1>
+		  <p>The school strives to always make its value live in the day-to-day experience of every member of the community.</p>
+		</div>
+	  
+		<!-- Image Card 1 -->
+		<div class="card image-card animate-on-scroll zoom-in delay-300">
+		  <div class="image-container">
+			<img src="/images/Screenshot 2025-03-09 120711.png" alt="Slide 1">
+			<img src="/images/Screenshot 2025-03-08 223353.png" alt="Slide 2">
+			<img src="/images/staff-2.jpg" alt="Slide 3">
+			<img src="/images/Screenshot 2025-03-17 230917.png" alt="Slide 4">
+		  </div>
+		  <div class="card-caption">How to Apply</div>
+		</div>
+	  
+		<!-- Image Card 2 -->
+		<div class="card image-card animate-on-scroll zoom-in delay-400">
+		  <div class="image-container">
+			<img src="/images/img2a.png" alt="Slide 1">
+			<img src="/images/img2b.png" alt="Slide 2">
+			<img src="/images/img2c.png" alt="Slide 3">
+			<img src="/images/img2d.png" alt="Slide 4">
+		  </div>
+		  <div class="card-caption">Parents' Involvement</div>
+		</div>
+	  
+		<!-- Image Card 3 -->
+		<div class="card image-card animate-on-scroll zoom-in delay-500">
+		  <div class="image-container">
+			<img src="/images/img3a.png" alt="Slide 1">
+			<img src="/images/img3b.png" alt="Slide 2">
+			<img src="/images/img3c.png" alt="Slide 3">
+			<img src="/images/img3d.png" alt="Slide 4">
+		  </div>
+		  <div class="card-caption">Pre-primary</div>
+		</div>
+	  
+		<!-- Image Card 4 -->
+		<div class="card image-card animate-on-scroll zoom-in delay-600">
+		  <div class="image-container">
+			<img src="/images/img4a.png" alt="Slide 1">
+			<img src="/images/img4b.png" alt="Slide 2">
+			<img src="/images/img4c.png" alt="Slide 3">
+			<img src="/images/img4d.png" alt="Slide 4">
+		  </div>
+		  <div class="card-caption">Day Care</div>
+		</div>
+	  
+		<!-- Image Card 5 -->
+		<div class="card image-card animate-on-scroll zoom-in delay-700">
+		  <div class="image-container">
+			<img src="/images/img5a.png" alt="Slide 1">
+			<img src="/images/img5b.png" alt="Slide 2">
+			<img src="/images/img5c.png" alt="Slide 3">
+			<img src="/images/img5d.png" alt="Slide 4">
+		  </div>
+		  <div class="card-caption">Facilities</div>
+		</div>
+	  
+	  </div>
+	  
+	
+
+	
+	<div>
+		<h1 style="text-align: center; padding-top: 20px;" class="animate-on-scroll zoom-in">MORE FACTS</h1>	
+	</div>
+	
+	<div id="fh5co-counter" class="fh5co-counters animate-on-scroll fade-in-up" style="background-image: url(/images/Screenshot\ 2025-03-08\ 223308.png);" data-stellar-background-ratio="0.5">
 		<div class="overlay"></div>
 		<div class="container">
 			<div class="row">
 				<div class="col-md-10 col-md-offset-1">
 					<div class="row">
-						<div class="col-md-3 col-sm-6 text-center animate-box">
+						<div class="col-md-3 col-sm-6 text-center animate-on-scroll zoom-in delay-100">
 							<span class="icon"><i class="icon-head"></i></span>
 							<span class="fh5co-counter js-counter" data-from="0" data-to="30" data-speed="5000" data-refresh-interval="50"></span>
 							<span class="fh5co-counter-label">Teachers</span>
 						</div>
-						<div class="col-md-3 col-sm-6 text-center animate-box">
+						<div class="col-md-3 col-sm-6 text-center animate-on-scroll zoom-in delay-200">
 							<span class="icon"><i class="icon-study"></i></span>
 							<span class="fh5co-counter js-counter" data-from="0" data-to="800" data-speed="5000" data-refresh-interval="50"></span>
 							<span class="fh5co-counter-label">Students Enrolled</span>
 						</div>
-						<div class="col-md-3 col-sm-6 text-center animate-box">
+						<div class="col-md-3 col-sm-6 text-center animate-on-scroll zoom-in delay-300">
 							<span class="icon"><i class="icon-bulb"></i></span>
 							<span class="fh5co-counter js-counter" data-from="0" data-to="10" data-speed="5000" data-refresh-interval="50"></span>
 							<span class="fh5co-counter-label">Classes Complete</span>
 						</div>
-						<div class="col-md-3 col-sm-6 text-center animate-box">
+						<div class="col-md-3 col-sm-6 text-center animate-on-scroll zoom-in delay-400">
 							<span class="icon"><i class="icon-head"></i></span>
 							<span class="fh5co-counter js-counter" data-from="0" data-to="52" data-speed="5000" data-refresh-interval="50"></span>
 							<span class="fh5co-counter-label">Staff</span>
@@ -442,72 +554,76 @@ margin-bottom: 30PX;
 			</div>
 		</div>
 	</div>
-   
+	
 	
 	<div class="row">
 		<div class="col-lg-4 col-md-4">
-			<div class="fh5co-blog animate-box">
+			<div class="fh5co-blog animate-on-scroll fade-in-left delay-100">
 				<a href="#" class="blog-img-holder" style="background-image: url(images/project-1.jpg);border-radius: 10px;"></a>
 			</div>
 		</div>
 		<div class="col-lg-4 col-md-4">
-			<div class="fh5co-blog animate-box">
+			<div class="fh5co-blog animate-on-scroll fade-in-up delay-200">
 				<a href="#" class="blog-img-holder" style="background-image: url(images/project-2.jpg); border-radius: 10px;"></a>	
 			</div>
 		</div>
 		<div class="col-lg-4 col-md-4">
-			<div class="fh5co-blog animate-box">
+			<div class="fh5co-blog animate-on-scroll fade-in-right delay-300">
 				<a href="#" class="blog-img-holder" style="background-image: url(images/project-3.jpg);border-radius: 10px;"></a>	
 			</div>
 		</div>
 	</div>
-
-	<div class="container-calender">
-        <div class="calcard">
-            <h3>First Day</h3>
-            <p>Jan 10, 2025</p>
-        </div>
-        <div class="calcard">
-            <h3>Midterm Break</h3>
-            <p>Feb 20, 2025</p>
-        </div>
-        <div class="calcard">
-            <h3>Exams Start</h3>
-            <p>Mar 15, 2025</p>
-        </div>
-        <div class="calcard">
-            <h3>Last Day</h3>
-            <p>Apr 5, 2025</p>
-        </div>
-        <div class="calcard">
-            <h3>Report Day</h3>
-            <p>Apr 10, 2025</p>
-        </div>
-    </div>
-
-
+	
+	<div class="container-calender animate-on-scroll fade-in-up">
+		<div class="calcard animate-on-scroll fade-in-left delay-100">
+			<h3>First Day</h3>
+			<p>Jan 10, 2025</p>
+		</div>
+		<div class="calcard animate-on-scroll fade-in-right delay-200">
+			<h3>Midterm Break</h3>
+			<p>Feb 20, 2025</p>
+		</div>
+		<div class="calcard animate-on-scroll fade-in-left delay-300">
+			<h3>Exams Start</h3>
+			<p>Mar 15, 2025</p>
+		</div>
+		<div class="calcard animate-on-scroll fade-in-right delay-400">
+			<h3>Last Day</h3>
+			<p>Apr 5, 2025</p>
+		</div>
+		<div class="calcard animate-on-scroll fade-in-left delay-500">
+			<h3>Report Day</h3>
+			<p>Apr 10, 2025</p>
+		</div>
+		<div class="calcard animate-on-scroll fade-in-right delay-600">
+			<h3>Report Day</h3>
+			<p>Apr 10, 2025</p>
+		</div>
+	</div>
+	
+	
 		
 	<div style="text-align: center; padding-top: 20px;">
-		<button style="background-color: maroon; border-radius: 10px;">
+		<button style="background-color: maroon; border-radius: 10px;" class="animate-on-scroll zoom-in">
 			<a href="Gallery.html" style="font-size:25px; color:gray">Gallery</a>
 		</button>
 	</div>
 	
 	
-		<div class="image-grid">
-			<div class="image-panel">
-				<img src="/images/Screenshot 2025-03-17 230917.png" alt="Image 1">
-			</div>
-			<div class="image-panel">
-				<img src="/images/Screenshot 2025-03-09 120711.png" alt="Image 2">
-			</div>
-			<div class="image-panel">
-				<img src="/images/Screenshot 2025-03-08 223353.png" alt="Image 3">
-			</div>
-			<div class="image-panel">
-				<img src="/images/Screenshot 2025-03-08 223308.png" alt="Image 4">
-			</div>
+	<div class="image-grid animate-on-scroll fade-in-up">
+		<div class="image-panel animate-on-scroll zoom-in delay-100">
+			<img src="/images/Screenshot 2025-03-17 230917.png" alt="Image 1">
 		</div>
+		<div class="image-panel animate-on-scroll zoom-in delay-200">
+			<img src="/images/Screenshot 2025-03-09 120711.png" alt="Image 2">
+		</div>
+		<div class="image-panel animate-on-scroll zoom-in delay-300">
+			<img src="/images/Screenshot 2025-03-08 223353.png" alt="Image 3">
+		</div>
+		<div class="image-panel animate-on-scroll zoom-in delay-400">
+			<img src="/images/Screenshot 2025-03-08 223308.png" alt="Image 4">
+		</div>
+	</div>
 	
 	<footer id="fh5co-footer" role="contentinfo" style="background-image: url(images/img_bg_4.jpg);">
 		<div class="overlay"></div>
@@ -699,6 +815,74 @@ margin-bottom: 30PX;
 		observer.observe(element);
 	});
 </script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    // Create Intersection Observer
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            // Uncomment the line below if you want animation to happen only once
+            // observer.unobserve(entry.target);
+          } else {
+            entry.target.classList.remove("is-visible");
+          }
+        });
+      },
+      {
+        threshold: 0.15,
+        rootMargin: "0px 0px -50px 0px",
+      }
+    );
+
+    // Observe all elements with animation class
+    const elements = document.querySelectorAll(".animate-on-scroll");
+    elements.forEach((el) => observer.observe(el));
+
+    // Animate .card elements individually with zoom-in
+    const cards = document.querySelectorAll(".card");
+    cards.forEach((card, index) => {
+      card.classList.add("animate-on-scroll");
+      card.classList.add("zoom-in");
+      card.classList.add(`delay-${(index % 5 + 1) * 100}`);
+      card.style.opacity = "";
+      card.style.transform = "";
+    });
+
+    // Animate other sections
+    document
+      .querySelectorAll(
+        ".about-section, #fh5co-counter, .container-calender, .image-grid"
+      )
+      .forEach((section) => {
+        section.classList.add("animate-on-scroll", "fade-in-up");
+      });
+
+    // Animate .fh5co-blog with zoom-in and delays
+    document.querySelectorAll(".fh5co-blog").forEach((blog, index) => {
+      blog.classList.add("animate-on-scroll", "zoom-in");
+      blog.classList.add(`delay-${(index % 3 + 1) * 100}`);
+    });
+
+    // Alternate fade-in-left and right for .calcard
+    document.querySelectorAll(".calcard").forEach((card, index) => {
+      card.classList.add("animate-on-scroll");
+      card.classList.add(index % 2 === 0 ? "fade-in-left" : "fade-in-right");
+      card.classList.add(`delay-${(index % 6 + 1) * 100}`);
+    });
+
+    // Animate counter columns with zoom-in
+    document
+      .querySelectorAll(".fh5co-counters .col-md-3")
+      .forEach((counter, index) => {
+        counter.classList.add("animate-on-scroll", "zoom-in");
+        counter.classList.add(`delay-${(index + 1) * 100}`);
+      });
+  });
+</script>
+
 	</body>
 </html>
 
