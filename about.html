@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - St. Catherine Junior School</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .history-timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .timeline-item {
+            position: relative;
+            padding: 30px 0;
+            border-left: 3px solid #6B7280;
+            margin-left: 30px;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -8px;
+            top: 40px;
+            width: 15px;
+            height: 15px;
+            background: #6B7280;
+            border-radius: 50%;
+        }
+        
+        .timeline-content {
+            margin-left: 40px;
+            background: #fff;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .timeline-year {
+            color: #4B5563;
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+        
+        .core-values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .value-card {
+            background: #fff;
+            padding: 40px 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .value-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .value-icon {
+            width: 80px;
+            height: 80px;
+            background: #6B7280;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: #fff;
+            font-size: 2rem;
+        }
+        
+        .staff-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        
+        .staff-card {
+            background: #fff;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .staff-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .staff-photo {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+        
+        .staff-info {
+            padding: 25px;
+        }
+        
+        .staff-name {
+            color: #4B5563;
+            font-size: 1.3rem;
+            margin-bottom: 5px;
+        }
+        
+        .staff-position {
+            color: #666;
+            font-weight: 500;
+            margin-bottom: 15px;
+        }
+        
+        .head-teacher-message {
+            background: linear-gradient(135deg, #374151 0%, #1F2937 100%);
+            color: #fff;
+            padding: 20px 0;
+            margin: 20px 0;
+        }
+        
+        .message-content {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+        
+        .head-teacher-photo {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid #fff;
+        }
+        
+        .message-text h3 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+        
+        .message-text p {
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+        
+        .accreditation-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .accreditation-card {
+            background: #fff;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .accreditation-logo {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        @media (max-width: 768px) {
+            .message-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .timeline-item {
+                margin-left: 20px;
+            }
+            
+            .timeline-content {
+                margin-left: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="nav-brand">
+                <img src="images/logo.png" alt="St. Catherine Logo" class="logo">
+                <span class="school-name">St. Catherine Junior School</span>
+            </div>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html" class="active">About Us</a></li>
+                    <li><a href="academics.html">Academics</a></li>
+                    <li><a href="admissions.html">Admissions</a></li>
+                    <li><a href="facilities.html">Facilities</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="news.html">News & Events</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="mobile-menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="hero">
+        <div class="hero-content">
+            <div>
+                <h1 class="hero-title">About St. Catherine Junior School</h1>
+                <p class="hero-subtitle">Building character, nurturing minds, shaping futures</p>
+            </div>
+        </div>
+        
+    </section>
+
+    <!-- History & Mission -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <h2>Our History & Mission</h2>
+                <p>A legacy of excellence in education spanning decades</p>
+            </div>
+            
+            <div class="history-timeline animate-on-scroll">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-year">1985</div>
+                        <h3>Foundation</h3>
+                        <p>St. Catherine Junior School was established with a vision to provide quality education to young minds in the community.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-year">1992</div>
+                        <h3>First Expansion</h3>
+                        <p>Added new classrooms and library facilities to accommodate growing student population.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-year">2005</div>
+                        <h3>Technology Integration</h3>
+                        <p>Introduced computer laboratory and digital learning resources to enhance modern education.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-year">2015</div>
+                        <h3>Accreditation</h3>
+                        <p>Received national recognition for excellence in Junior education and student development.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-year">2024</div>
+                        <h3>Modern Era</h3>
+                        <p>Continuing to innovate with new teaching methods and facilities for holistic student development.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Values -->
+    <section class="section-padding bg-light">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <h2>Our Core Values</h2>
+                <p>The principles that guide our educational approach</p>
+            </div>
+            
+            <div class="core-values-grid">
+                <div class="value-card animate-on-scroll">
+                    <div class="value-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>Respect</h3>
+                    <p>We foster mutual respect among students, teachers, and the entire school community.</p>
+                </div>
+                
+                <div class="value-card animate-on-scroll">
+                    <div class="value-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Discipline</h3>
+                    <p>We instill self-discipline and responsibility in our students for their personal growth.</p>
+                </div>
+                
+                <div class="value-card animate-on-scroll">
+                    <div class="value-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Teamwork</h3>
+                    <p>We encourage collaboration and teamwork to achieve common goals and objectives.</p>
+                </div>
+                
+                <div class="value-card animate-on-scroll">
+                    <div class="value-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3>Excellence</h3>
+                    <p>We strive for excellence in all aspects of education and character development.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Head Teacher Message -->
+    <section class="head-teacher-message">
+        <div class="container">
+            <div class="message-content animate-on-scroll">
+                <div>
+                    <img src="/images/_DSC0422 copy.jpg" alt="Head Teacher" class="head-teacher-photo">
+                </div>
+                <div class="message-text">
+                    <h3>Message from Our Head Teacher</h3>
+                    <p>Welcome to St. Catherine Junior School, where we believe every child has the potential to excel. Our dedicated team of educators is committed to providing a nurturing environment that fosters academic excellence, character development, and personal growth.</p>
+                    <p>We pride ourselves on our holistic approach to education, ensuring that our students not only achieve academic success but also develop into well-rounded individuals ready to face future challenges.</p>
+                    <p><strong>Mrs. Grace Namukasa</strong><br>Head Teacher</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Staff Section -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <h2>Our Dedicated Staff</h2>
+                <p>Meet the passionate educators who make learning come alive</p>
+            </div>
+            
+            <div class="staff-grid">
+                <div class="staff-card animate-on-scroll">
+                    <img src="images/teacher1.jpg" alt="Teacher" class="staff-photo">
+                    <div class="staff-info">
+                        <h3 class="staff-name">Mr. John Ssebunya</h3>
+                        <p class="staff-position">Mathematics Teacher</p>
+                        <p>B.Ed Mathematics, 8 years experience</p>
+                    </div>
+                </div>
+                
+                <div class="staff-card animate-on-scroll">
+                    <img src="images/teacher2.jpg" alt="Teacher" class="staff-photo">
+                    <div class="staff-info">
+                        <h3 class="staff-name">Ms. Sarah Nakato</h3>
+                        <p class="staff-position">English Teacher</p>
+                        <p>B.A Literature, 6 years experience</p>
+                    </div>
+                </div>
+                
+                <div class="staff-card animate-on-scroll">
+                    <img src="images/teacher3.jpg" alt="Teacher" class="staff-photo">
+                    <div class="staff-info">
+                        <h3 class="staff-name">Mr. David Mukasa</h3>
+                        <p class="staff-position">Science Teacher</p>
+                        <p>B.Sc Biology, 10 years experience</p>
+                    </div>
+                </div>
+                
+                <div class="staff-card animate-on-scroll">
+                    <img src="images/teacher4.jpg" alt="Teacher" class="staff-photo">
+                    <div class="staff-info">
+                        <h3 class="staff-name">Ms. Mary Namusoke</h3>
+                        <p class="staff-position">ICT Coordinator</p>
+                        <p>B.IT Computer Science, 5 years experience</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Accreditation -->
+    <section class="section-padding bg-light">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <h2>Accreditation & Recognition</h2>
+                <p>Our commitment to quality education is recognized by leading educational bodies</p>
+            </div>
+            
+            <div class="accreditation-grid">
+                <div class="accreditation-card animate-on-scroll">
+                    <div class="accreditation-logo">
+                        <i class="fas fa-certificate" style="font-size: 2rem; color: #6B7280;"></i>
+                    </div>
+                    <h4>Ministry of Education</h4>
+                    <p>Certified Junior School</p>
+                </div>
+                
+                <div class="accreditation-card animate-on-scroll">
+                    <div class="accreditation-logo">
+                        <i class="fas fa-award" style="font-size: 2rem; color: #6B7280;"></i>
+                    </div>
+                    <h4>Quality Assurance</h4>
+                    <p>Excellence in Education Award</p>
+                </div>
+                
+                <div class="accreditation-card animate-on-scroll">
+                    <div class="accreditation-logo">
+                        <i class="fas fa-medal" style="font-size: 2rem; color: #6B7280;"></i>
+                    </div>
+                    <h4>Community Recognition</h4>
+                    <p>Outstanding School Award 2023</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-brand">
+                        <img src="images/logo.png" alt="St. Catherine Logo" class="footer-logo">
+                        <h3>St. Catherine Junior School</h3>
+                        <p>Nurturing Young Minds for a Bright Future</p>
+                    </div>
+                </div>
+                <div class="footer-links-row">
+                    <div class="footer-section">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="academics.html">Academics</a></li>
+                            <li><a href="admissions.html">Admissions</a></li>
+                            <li><a href="facilities.html">Facilities</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Resources</h4>
+                        <ul>
+                            <li><a href="gallery.html">Gallery</a></li>
+                            <li><a href="news.html">News & Events</a></li>
+                            <li><a href="contact.html">Contact Us</a></li>
+                            <li><a href="#">Parent Portal</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-section contact-section">
+                    <h4>Contact Info</h4>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Kampala, Uganda</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+256 123 456 789</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>info@stcatherine.sch.ug</span>
+                    </div>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#"><i class="fas fa-envelope"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 St. Catherine Junior School. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

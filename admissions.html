@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admissions - St. Catherine Junior School</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .admission-process {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .process-step {
+            background: #fff;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            position: relative;
+        }
+        
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: #6B7280;
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 0 auto 20px;
+        }
+        
+        .documents-section {
+            background: #fff;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .documents-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+        
+        .document-card {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 12px;
+            text-align: center;
+            border-left: 4px solid #6B7280;
+            transition: transform 0.3s ease;
+        }
+        
+        .document-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .document-icon {
+            width: 60px;
+            height: 60px;
+            background: #6B7280;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            color: #fff;
+            font-size: 1.5rem;
+        }
+        
+        .document-card h4 {
+            color: #1F2937;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+        
+        .document-card p {
+            color: #6B7280;
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+        
+        .fee-table {
+            background: #fff;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            margin-top: 30px;
+        }
+        
+        .fee-table table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        .fee-table th {
+            background: #1F2937;
+            color: #fff;
+            padding: 20px;
+            text-align: left;
+            font-weight: 600;
+        }
+        
+        .fee-table td {
+            padding: 15px 20px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .fee-table tr:hover {
+            background: #f8f9fa;
+        }
+        
+        .application-form {
+            background: #fff;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            margin-top: 50px;
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #333;
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #e1e5e9;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #6B7280;
+        }
+        
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        
+        .download-section {
+            background: #f8f9fa;
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+            margin-top: 50px;
+        }
+        
+        .download-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: #6B7280;
+            color: #fff;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: background 0.3s ease;
+            margin: 10px;
+        }
+        
+        .download-btn:hover {
+            background: #4B5563;
+        }
+        
+        .requirements-list {
+            background: #fff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .requirements-list ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .requirements-list li {
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+            position: relative;
+            padding-left: 30px;
+        }
+        
+        .requirements-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #6B7280;
+            font-weight: bold;
+        }
+        
+        @media (max-width: 768px) {
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+            
+            .documents-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+            
+            .documents-section {
+                padding: 20px;
+            }
+            
+            .document-card {
+                padding: 20px;
+            }
+            
+            .document-icon {
+                width: 50px;
+                height: 50px;
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="nav-brand">
+                <img src="images/logo.png" alt="St. Catherine Logo" class="logo">
+                <span class="school-name">St. Catherine Junior School</span>
+            </div>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="academics.html">Academics</a></li>
+                    <li><a href="admissions.html" class="active">Admissions</a></li>
+                    <li><a href="facilities.html">Facilities</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="news.html">News & Events</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="mobile-menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="hero">
+        <div class="hero-content">
+            <div>
+                <h1 class="hero-title">Admissions</h1>
+                <p class="hero-subtitle">Join our community of learners and achievers</p>
+            </div>
+        </div>
+        
+    </section>
+
+    <!-- Admission Guidelines -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <h2>Admission Guidelines</h2>
+                <p>Everything you need to know about joining St. Catherine Junior School</p>
+            </div>
+            
+            <div class="documents-section animate-on-scroll">
+                <h3 style="color: #4B5563; margin-bottom: 30px; text-align: center; font-size: 2rem;">Required Documents</h3>
+                <div class="documents-grid">
+                    <div class="document-card">
+                        <div class="document-icon">
+                            <i class="fas fa-certificate"></i>
+                        </div>
+                        <h4>Birth Certificate</h4>
+                        <p>Original and photocopy required for age verification</p>
+                    </div>
+                    <div class="document-card">
+                        <div class="document-icon">
+                            <i class="fas fa-camera"></i>
+                        </div>
+                        <h4>Passport Photos</h4>
+                        <p>4 recent passport-size photographs</p>
+                    </div>
+                    <div class="document-card">
+                        <div class="document-icon">
+                            <i class="fas fa-file-alt"></i>
+                        </div>
+                        <h4>Previous School Report</h4>
+                        <p>Academic records from previous institution (if applicable)</p>
+                    </div>
+                    <div class="document-card">
+                        <div class="document-icon">
+                            <i class="fas fa-stethoscope"></i>
+                        </div>
+                        <h4>Medical Certificate</h4>
+                        <p>Health clearance from certified medical practitioner</p>
+                    </div>
+                    <div class="document-card">
+                        <div class="document-icon">
+                            <i class="fas fa-id-card"></i>
+                        </div>
+                        <h4>Parent/Guardian ID</h4>
+                        <p>Copy of national ID or passport</p>
+                    </div>
+                    <div class="document-card">
+                        <div class="document-icon">
+                            <i class="fas fa-syringe"></i>
+                        </div>
+                        <h4>Immunization Card</h4>
+                        <p>Complete vaccination records</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Application Process -->
+    <section class="section-padding bg-light">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <h2>Application Process</h2>
+                <p>Simple steps to secure your child's place at our school</p>
+            </div>
+            
+            <div class="admission-process">
+                <div class="process-step animate-on-scroll">
+                    <div class="step-number">1</div>
+                    <h3>Download Form</h3>
+                    <p>Download and complete the application form with accurate information</p>
+                </div>
+                
+                <div class="process-step animate-on-scroll">
+                    <div class="step-number">2</div>
+                    <h3>Submit Documents</h3>
+                    <p>Submit completed form with all required documents to the school office</p>
+                </div>
+                
+                <div class="process-step animate-on-scroll">
+                    <div class="step-number">3</div>
+                    <h3>Interview</h3>
+                    <p>Attend scheduled interview with child and parent/guardian</p>
+                </div>
+                
+                <div class="process-step animate-on-scroll">
+                    <div class="step-number">4</div>
+                    <h3>Admission</h3>
+                    <p>Receive admission letter and complete enrollment process</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fee Structure -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <h2>Fee Structure</h2>
+                <p>Transparent and affordable fee structure for quality education</p>
+            </div>
+            
+            <div class="fee-table animate-on-scroll">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Class Level</th>
+                            <th>Tuition Fee (Per Term)</th>
+                            <th>Development Fee (Annual)</th>
+                            <th>Total (Per Term)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Pre-Junior</td>
+                            <td>UGX 150,000</td>
+                            <td>UGX 50,000</td>
+                            <td>UGX 200,000</td>
+                        </tr>
+                        <tr>
+                            <td>Junior 1-3</td>
+                            <td>UGX 180,000</td>
+                            <td>UGX 60,000</td>
+                            <td>UGX 240,000</td>
+                        </tr>
+                        <tr>
+                            <td>Junior 4-6</td>
+                            <td>UGX 200,000</td>
+                            <td>UGX 70,000</td>
+                            <td>UGX 270,000</td>
+                        </tr>
+                        <tr>
+                            <td>Junior 7</td>
+                            <td>UGX 220,000</td>
+                            <td>UGX 80,000</td>
+                            <td>UGX 300,000</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div style="margin-top: 30px; padding: 20px; background: #f8f9fa; border-radius: 10px;">
+                <h4 style="color: #4B5563; margin-bottom: 15px;">Additional Fees:</h4>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="margin-bottom: 8px;"><strong>Lunch:</strong> UGX 30,000 per term (optional)</li>
+                    <li style="margin-bottom: 8px;"><strong>Transport:</strong> UGX 40,000 per term (optional)</li>
+                    <li style="margin-bottom: 8px;"><strong>Uniform:</strong> UGX 80,000 (one-time)</li>
+                    <li style="margin-bottom: 8px;"><strong>Books & Materials:</strong> UGX 50,000 per year</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Download Forms -->
+    <section class="section-padding bg-light">
+        <div class="container">
+            <div class="download-section animate-on-scroll">
+                <h2 style="color: #4B5563; margin-bottom: 20px;">Download Application Forms</h2>
+                <p style="margin-bottom: 30px;">Get the necessary forms to start your application process</p>
+                
+                <div>
+                    <a href="#" class="download-btn">
+                        <i class="fas fa-download"></i>
+                        Application Form
+                    </a>
+                    <a href="#" class="download-btn">
+                        <i class="fas fa-download"></i>
+                        Medical Form
+                    </a>
+                    <a href="#" class="download-btn">
+                        <i class="fas fa-download"></i>
+                        Parent Handbook
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interview Appointment Form -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <h2>Schedule Interview Appointment</h2>
+                <p>Book an appointment for your child's admission interview</p>
+            </div>
+            
+            <div class="application-form animate-on-scroll">
+                <form id="interviewForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="parentName">Parent/Guardian Name *</label>
+                            <input type="text" id="parentName" name="parentName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number *</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="childName">Child's Name *</label>
+                            <input type="text" id="childName" name="childName" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="childAge">Child's Age *</label>
+                            <input type="number" id="childAge" name="childAge" min="3" max="15" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="classLevel">Desired Class Level *</label>
+                            <select id="classLevel" name="classLevel" required>
+                                <option value="">Select Class Level</option>
+                                <option value="pre-Junior">Pre-Junior</option>
+                                <option value="Junior-1">Junior 1</option>
+                                <option value="Junior-2">Junior 2</option>
+                                <option value="Junior-3">Junior 3</option>
+                                <option value="Junior-4">Junior 4</option>
+                                <option value="Junior-5">Junior 5</option>
+                                <option value="Junior-6">Junior 6</option>
+                                <option value="Junior-7">Junior 7</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="preferredDate">Preferred Interview Date *</label>
+                            <input type="date" id="preferredDate" name="preferredDate" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="preferredTime">Preferred Time *</label>
+                            <select id="preferredTime" name="preferredTime" required>
+                                <option value="">Select Time</option>
+                                <option value="9:00 AM">9:00 AM</option>
+                                <option value="10:00 AM">10:00 AM</option>
+                                <option value="11:00 AM">11:00 AM</option>
+                                <option value="2:00 PM">2:00 PM</option>
+                                <option value="3:00 PM">3:00 PM</option>
+                                <option value="4:00 PM">4:00 PM</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="previousSchool">Previous School (if applicable)</label>
+                        <input type="text" id="previousSchool" name="previousSchool">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="specialNeeds">Special Needs or Requirements</label>
+                        <textarea id="specialNeeds" name="specialNeeds" rows="4" placeholder="Please describe any special needs or requirements for your child"></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="additionalInfo">Additional Information</label>
+                        <textarea id="additionalInfo" name="additionalInfo" rows="4" placeholder="Any additional information you'd like to share"></textarea>
+                    </div>
+                    
+                    <div style="text-align: center; margin-top: 30px;">
+                        <button type="submit" class="btn btn-Junior" style="padding: 15px 40px; font-size: 1.1rem;">
+                            Schedule Interview
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-brand">
+                        <img src="images/logo.png" alt="St. Catherine Logo" class="footer-logo">
+                        <h3>St. Catherine Junior School</h3>
+                        <p>Nurturing Young Minds for a Bright Future</p>
+                    </div>
+                </div>
+                <div class="footer-links-row">
+                    <div class="footer-section">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="academics.html">Academics</a></li>
+                            <li><a href="admissions.html">Admissions</a></li>
+                            <li><a href="facilities.html">Facilities</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Resources</h4>
+                        <ul>
+                            <li><a href="gallery.html">Gallery</a></li>
+                            <li><a href="news.html">News & Events</a></li>
+                            <li><a href="contact.html">Contact Us</a></li>
+                            <li><a href="#">Parent Portal</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-section contact-section">
+                    <h4>Contact Info</h4>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Kampala, Uganda</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+256 123 456 789</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>info@stcatherine.sch.ug</span>
+                    </div>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#"><i class="fas fa-envelope"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 St. Catherine Junior School. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="js/script.js"></script>
+    <script>
+        // Interview form submission
+        document.getElementById('interviewForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your application! We will contact you within 2 business days to confirm your interview appointment.');
+        });
+    </script>
+</body>
+</html>

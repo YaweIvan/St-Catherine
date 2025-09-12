@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - St. Catherine Junior School</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 50px;
+        }
+        .gallery-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        .gallery-image:hover {
+            transform: translateY(-10px);
+        }
+        @media (max-width: 768px) {
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
+            }
+            .gallery-image {
+                height: 200px;
+            }
+        }
+        .video-section {
+            background: #f8f9fa;
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+            margin-top: 50px;
+        }
+        .video-placeholder {
+            width: 100%;
+            height: 400px;
+            background: linear-gradient(135deg, #8B0000 0%, #A52A2A 100%);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 4rem;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="nav-brand">
+                <img src="images/logo.png" alt="St. Catherine Logo" class="logo">
+                <span class="school-name">St. Catherine Junior School</span>
+            </div>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="academics.html">Academics</a></li>
+                    <li><a href="admissions.html">Admissions</a></li>
+                    <li><a href="facilities.html">Facilities</a></li>
+                    <li><a href="gallery.html" class="active">Gallery</a></li>
+                    <li><a href="news.html">News & Events</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="mobile-menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <div>
+                <h1 class="hero-title">Gallery</h1>
+                <p class="hero-subtitle">Capturing moments of learning and growth</p>
+            </div>
+        </div>
+       
+    </section>
+
+    <section class="section-padding">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <h2>School Life in Pictures</h2>
+                <p>Explore our vibrant school community through photos</p>
+            </div>
+            <div class="gallery-grid">
+                <img src="images/classroom-activity.jpg" alt="Classroom Activities" class="gallery-image animate-on-scroll">
+                <img src="images/sports-event.jpg" alt="Sports Events" class="gallery-image animate-on-scroll">
+                <img src="images/art-creativity.jpg" alt="Art & Creativity" class="gallery-image animate-on-scroll">
+                <img src="images/science-experiment.jpg" alt="Science Experiments" class="gallery-image animate-on-scroll">
+                <img src="images/music-performance.jpg" alt="Music & Performance" class="gallery-image animate-on-scroll">
+                <img src="images/graduation-ceremony.jpg" alt="Graduation Ceremony" class="gallery-image animate-on-scroll">
+                <img src="images/library-reading.jpg" alt="Library Reading" class="gallery-image animate-on-scroll">
+                <img src="images/outdoor-learning.jpg" alt="Outdoor Learning" class="gallery-image animate-on-scroll">
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding bg-light">
+        <div class="container">
+            <div class="video-section animate-on-scroll">
+                <h2 style="color: #8B0000; margin-bottom: 20px;">School Promotional Video</h2>
+                <p>Watch our school in action - a day in the life at St. Catherine Junior School</p>
+                <div class="video-placeholder">
+                    <i class="fas fa-play-circle"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-brand">
+                        <img src="images/logo.png" alt="St. Catherine Logo" class="footer-logo">
+                        <h3>St. Catherine Junior School</h3>
+                        <p>Nurturing Young Minds for a Bright Future</p>
+                    </div>
+                </div>
+                <div class="footer-links-row">
+                    <div class="footer-section">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="academics.html">Academics</a></li>
+                            <li><a href="admissions.html">Admissions</a></li>
+                            <li><a href="facilities.html">Facilities</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Resources</h4>
+                        <ul>
+                            <li><a href="gallery.html">Gallery</a></li>
+                            <li><a href="news.html">News & Events</a></li>
+                            <li><a href="contact.html">Contact Us</a></li>
+                            <li><a href="#">Parent Portal</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-section contact-section">
+                    <h4>Contact Info</h4>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Kampala, Uganda</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+256 123 456 789</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>info@stcatherine.sch.ug</span>
+                    </div>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#"><i class="fas fa-envelope"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 St. Catherine Junior School. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
