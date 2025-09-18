@@ -77,14 +77,6 @@
                 </div>
             </div>
             <div class="about-content">
-                <div class="about-text animate-on-scroll">
-                    <h3>Our Mission</h3>
-                    <p>To provide quality education that nurtures young minds, builds character, and prepares students for future success through innovative teaching methods and a supportive learning environment.</p>
-                    <a href="about.html" class="btn btn-outline">Learn More About Us</a>
-                </div>
-                <div class="about-image animate-on-scroll">
-                    <img src="images/_DSC0422 copy.jpg" alt="St. Catherine School Building">
-                </div>
                 <div class="about-image animate-on-scroll">
                     <img src="images/_DSC0422 copy.jpg" alt="St. Catherine School Building">
                 </div>
@@ -93,6 +85,9 @@
                     <p>To provide quality education that nurtures young minds, builds character, and prepares students for future success through innovative teaching methods and a supportive learning environment.</p>
                     <a href="about.html" class="btn btn-outline">Learn More About Us</a>
                 </div>
+                
+                
+                
                 
             </div>
         </div>
@@ -290,42 +285,98 @@
                 <h2>What Parents & Students Say</h2>
                 <p>Hear from our school community</p>
             </div>
-            <div class="testimonials-grid">
-                <div class="testimonial-card animate-on-scroll">
-                    <div class="testimonial-content">
-                        <p>"St. Catherine has provided my daughter with excellent education and moral guidance. The teachers are dedicated and caring."</p>
+            <div class="testimonials-slider-container">
+                <div class="testimonials-slider">
+                    <div class="testimonial-slide active">
+                        <div class="testimonial-card">
+                            <div class="testimonial-content">
+                                <i class="fas fa-quote-left quote-icon"></i>
+                                <p>"St. Catherine has provided my daughter with excellent education and moral guidance. The teachers are dedicated and caring."</p>
+                            </div>
+                            <div class="testimonial-author">
+                                <img src="images/parent1.jpg" alt="Parent">
+                                <div>
+                                    <h4>Mrs. Sarah Nakato</h4>
+                                    <span>Parent</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="testimonial-author">
-                        <img src="images/parent1.jpg" alt="Parent">
-                        <div>
-                            <h4>Mrs. Sarah Nakato</h4>
-                            <span>Parent</span>
+                    <div class="testimonial-slide">
+                        <div class="testimonial-card">
+                            <div class="testimonial-content">
+                                <i class="fas fa-quote-left quote-icon"></i>
+                                <p>"I love my school! The teachers are kind and help us learn new things every day. I especially enjoy the computer classes."</p>
+                            </div>
+                            <div class="testimonial-author">
+                                <img src="images/student1.jpg" alt="Student">
+                                <div>
+                                    <h4>John Mukasa</h4>
+                                    <span>Grade 6 Student</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-slide">
+                        <div class="testimonial-card">
+                            <div class="testimonial-content">
+                                <i class="fas fa-quote-left quote-icon"></i>
+                                <p>"The holistic approach to education at St. Catherine has helped my son develop both academically and socially."</p>
+                            </div>
+                            <div class="testimonial-author">
+                                <img src="images/parent2.jpg" alt="Parent">
+                                <div>
+                                    <h4>Mr. David Ssemakula</h4>
+                                    <span>Parent</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-slide">
+                        <div class="testimonial-card">
+                            <div class="testimonial-content">
+                                <i class="fas fa-quote-left quote-icon"></i>
+                                <p>"The school environment is wonderful and safe. My children have grown in confidence and academic performance since joining St. Catherine."</p>
+                            </div>
+                            <div class="testimonial-author">
+                                <img src="images/parent3.jpg" alt="Parent">
+                                <div>
+                                    <h4>Mrs. Grace Namukasa</h4>
+                                    <span>Parent</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-slide">
+                        <div class="testimonial-card">
+                            <div class="testimonial-content">
+                                <i class="fas fa-quote-left quote-icon"></i>
+                                <p>"Our teachers make learning fun! I especially love science class and sports. St. Catherine is the best school ever!"</p>
+                            </div>
+                            <div class="testimonial-author">
+                                <img src="images/student2.jpg" alt="Student">
+                                <div>
+                                    <h4>Mary Akello</h4>
+                                    <span>Grade 5 Student</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="testimonial-card animate-on-scroll">
-                    <div class="testimonial-content">
-                        <p>"I love my school! The teachers are kind and help us learn new things every day. I especially enjoy the computer classes."</p>
-                    </div>
-                    <div class="testimonial-author">
-                        <img src="images/student1.jpg" alt="Student">
-                        <div>
-                            <h4>John Mukasa</h4>
-                            <span>Grade 6 Student</span>
-                        </div>
-                    </div>
+                <div class="testimonials-nav">
+                    <button class="testimonial-nav-btn prev" onclick="changeTestimonial(-1)">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="testimonial-nav-btn next" onclick="changeTestimonial(1)">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
                 </div>
-                <div class="testimonial-card animate-on-scroll">
-                    <div class="testimonial-content">
-                        <p>"The holistic approach to education at St. Catherine has helped my son develop both academically and socially."</p>
-                    </div>
-                    <div class="testimonial-author">
-                        <img src="images/parent2.jpg" alt="Parent">
-                        <div>
-                            <h4>Mr. David Ssemakula</h4>
-                            <span>Parent</span>
-                        </div>
-                    </div>
+                <div class="testimonials-dots">
+                    <span class="dot active" onclick="currentTestimonial(1)"></span>
+                    <span class="dot" onclick="currentTestimonial(2)"></span>
+                    <span class="dot" onclick="currentTestimonial(3)"></span>
+                    <span class="dot" onclick="currentTestimonial(4)"></span>
+                    <span class="dot" onclick="currentTestimonial(5)"></span>
                 </div>
             </div>
         </div>

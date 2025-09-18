@@ -141,6 +141,7 @@ document.addEventListener('DOMContentLoaded', () => {
     validateForms();
     backToTop();
     heroSlideshow();
+    initTestimonialsSlider();
 });
 
 // Run animation on scroll
@@ -172,3 +173,86 @@ function backToTop() {
 window.addEventListener('load', () => {
     document.body.classList.add('loaded');
 });
+
+// Testimonials Slider
+let currentTestimonialIndex = 0;
+const testimonialSlides = document.querySelectorAll('.testimonial-slide');
+const testimonialDots = document.querySelectorAll('.testimonials-dots .dot');
+
+function showTestimonial(index) {
+    // Hide all slides
+    testimonialSlides.forEach((slide, i) => {
+        slide.classList.remove('active', 'prev');
+        if (i < index) {
+            slide.classList.add('prev');
+        }
+    });
+    
+    // Show current slide
+    if (testimonialSlides[index]) {
+        testimonialSlides[index].classList.add('active');
+    }
+    
+    // Update dots
+    testimonialDots.forEach((dot, i) => {
+        dot.classList.toggle('active', i === index);
+    });
+    
+    currentTestimonialIndex = index;
+}
+
+function changeTestimonial(direction) {
+    let newIndex = currentTestimonialIndex + direction;
+    
+    if (newIndex >= testimonialSlides.length) {
+        newIndex = 0;
+    } else if (newIndex < 0) {
+        newIndex = testimonialSlides.length - 1;
+    }
+    
+    showTestimonial(newIndex);
+}
+
+function currentTestimonial(index) {
+    showTestimonial(index - 1);
+}
+
+// Auto-slide testimonials
+function autoSlideTestimonials() {
+    setInterval(() => {
+        changeTestimonial(1);
+    }, 5000); // Change every 5 seconds
+}
+
+// Initialize testimonials slider
+function initTestimonialsSlider() {
+    if (testimonialSlides.length > 0) {
+        showTestimonial(0);
+        autoSlideTestimonials();
+        
+        // Add keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') {
+                changeTestimonial(-1);
+            } else if (e.key === 'ArrowRight') {
+                changeTestimonial(1);
+            }
+        });
+        
+        // Pause auto-slide on hover
+        const sliderContainer = document.querySelector('.testimonials-slider-container');
+        if (sliderContainer) {
+            let autoSlideInterval;
+            
+            sliderContainer.addEventListener('mouseenter', () => {
+                clearInterval(autoSlideInterval);
+            });
+            
+            sliderContainer.addEventListener('mouseleave', () => {
+                autoSlideInterval = setInterval(() => {
+                    changeTestimonial(1);
+                }, 5000);
+            });
+        }
+    }
+}
