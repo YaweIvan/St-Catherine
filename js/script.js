@@ -114,21 +114,133 @@ function validateForms() {
     });
 }
 
-// Hero slideshow
-function heroSlideshow() {
-    let currentSlide = 0;
-    const slides = document.querySelectorAll('.hero-slideshow .slide');
+// Different Hero Sections Handler
+function initHeroSections() {
+    const heroSection = document.querySelector('.hero');
+    if (!heroSection) return;
     
-    function showNextSlide() {
-        if (slides.length > 0) {
-            slides[currentSlide].classList.remove('active');
-            currentSlide = (currentSlide + 1) % slides.length;
-            slides[currentSlide].classList.add('active');
-        }
-    }
+    const currentPage = getCurrentPage();
+    applyHeroStyle(heroSection, currentPage);
+}
+
+function getCurrentPage() {
+    const path = window.location.pathname;
+    const page = path.split('/').pop().replace('.html', '');
     
-    if (slides.length > 0) {
-        setInterval(showNextSlide, 4000); // Change image every 4 seconds
+    if (page === '' || page === 'index') return 'home';
+    return page;
+}
+
+function applyHeroStyle(heroElement, pageType) {
+    heroElement.className = heroElement.className.replace(/hero-\w+/g, '');
+    heroElement.classList.add(`hero-${pageType}`);
+    
+    const heroContent = heroElement.querySelector('.hero-content');
+    if (!heroContent) return;
+    
+    switch(pageType) {
+        case 'academics':
+            heroContent.insertAdjacentHTML('beforeend', `
+                <div class="academics-icons">
+                    <div class="academic-icon"><i class="fas fa-book"></i></div>
+                    <div class="academic-icon"><i class="fas fa-calculator"></i></div>
+                    <div class="academic-icon"><i class="fas fa-flask"></i></div>
+                    <div class="academic-icon"><i class="fas fa-laptop"></i></div>
+                </div>
+            `);
+            break;
+        case 'admissions':
+            heroContent.insertAdjacentHTML('beforeend', `
+                <div class="admission-highlights">
+                    <div class="highlight-item">
+                        <div class="highlight-icon"><i class="fas fa-clock"></i></div>
+                        <div>
+                            <h4>Quick Process</h4>
+                            <p>Simple 4-step admission process</p>
+                        </div>
+                    </div>
+                    <div class="highlight-item">
+                        <div class="highlight-icon"><i class="fas fa-dollar-sign"></i></div>
+                        <div>
+                            <h4>Affordable Fees</h4>
+                            <p>Quality education at reasonable cost</p>
+                        </div>
+                    </div>
+                    <div class="highlight-item">
+                        <div class="highlight-icon"><i class="fas fa-calendar"></i></div>
+                        <div>
+                            <h4>Open Enrollment</h4>
+                            <p>Applications accepted year-round</p>
+                        </div>
+                    </div>
+                </div>
+            `);
+            break;
+        case 'facilities':
+            heroContent.insertAdjacentHTML('beforeend', `
+                <div class="facilities-showcase">
+                    <div class="facility-preview">
+                        <img src="images/_DSC0457.JPG" alt="Modern Classroom">
+                    </div>
+                    <div class="facility-preview">
+                        <img src="images/_DSC0462.jpg" alt="Library">
+                    </div>
+                    <div class="facility-preview">
+                        <img src="images/1@ (28).JPG" alt="Playground">
+                    </div>
+                </div>
+            `);
+            break;
+        case 'gallery':
+            const images = [
+                'images/1@ (6).JPG', 'images/_DSC0389.JPG', 'images/1@ (95).JPG',
+                'images/_DSC0517.JPG', 'images/_DSC0457.jpg', 'images/1@ (10).JPG',
+                'images/_DSC0401.jpg', 'images/1@ (28).JPG', 'images/_DSC0462.jpg',
+                'images/1@ (33).JPG', 'images/1@ (3).JPG', 'images/_DSC0530.jpg'
+            ];
+            
+            heroElement.insertAdjacentHTML('afterbegin', `
+                <div class="gallery-mosaic">
+                    ${images.map(img => `<div class="mosaic-item" style="background-image: url('${img}')"></div>`).join('')}
+                </div>
+            `);
+            break;
+        case 'news':
+            heroContent.insertAdjacentHTML('beforeend', `
+                <div class="news-highlight">
+                    <div class="news-date">Latest Update</div>
+                    <h3 class="news-headline">New Term Begins January 15, 2025</h3>
+                    <p>Registration is now open for the new academic term. Secure your child's place today!</p>
+                </div>
+            `);
+            break;
+        case 'contact':
+            heroContent.insertAdjacentHTML('beforeend', `
+                <div class="contact-info-card">
+                    <div class="contact-item-hero">
+                        <div class="contact-icon-hero"><i class="fas fa-map-marker-alt"></i></div>
+                        <div>
+                            <h4>Visit Us</h4>
+                            <p>Kampala, Uganda</p>
+                        </div>
+                    </div>
+                    <div class="contact-item-hero">
+                        <div class="contact-icon-hero"><i class="fas fa-phone"></i></div>
+                        <div>
+                            <h4>Call Us</h4>
+                            <p>+256 123 456 789</p>
+                        </div>
+                    </div>
+                    <div class="contact-item-hero">
+                        <div class="contact-icon-hero"><i class="fas fa-envelope"></i></div>
+                        <div>
+                            <h4>Email Us</h4>
+                            <p>info@stcatherine.sch.ug</p>
+                        </div>
+                    </div>
+                </div>
+            `);
+            break;
     }
 }
 
@@ -140,6 +252,7 @@ document.addEventListener('DOMContentLoaded', () => {
     smoothScroll();
     validateForms();
     backToTop();
+    initHeroSections();
     heroSlideshow();
     initTestimonialsSlider();
 });
@@ -166,6 +279,24 @@ function backToTop() {
                 behavior: 'smooth'
             });
         });
+    }
+}
+
+// Hero slideshow (for home page only)
+function heroSlideshow() {
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.hero-slideshow .slide');
+    
+    function showNextSlide() {
+        if (slides.length > 0) {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (currentSlide + 1) % slides.length;
+            slides[currentSlide].classList.add('active');
+        }
+    }
+    
+    if (slides.length > 0) {
+        setInterval(showNextSlide, 4000);
     }
 }
 
