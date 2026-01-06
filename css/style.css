@@ -885,158 +885,188 @@ body.menu-open {
   margin: 0 auto;
 }
 
-/* Academics Grid - Horizontal Ellipse */
+/* Academics Grid - Responsive Ellipse Layout */
 .academics-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 25px;
-  margin: 50px 0;
-}
-
-.ellipse-container {
   display: flex;
+  justify-content: center;
   align-items: center;
-  height: 300px;
+  margin: 50px 0;
+  padding: 20px 0;
 }
 
-.left-semicircle {
-  width: 300px;
-  height: 300px;
-  border-radius: 150px 0 0 150px;
-  overflow: hidden;
-  margin: 0;
-}
-
-.center-rectangle {
-  width: 600px;
-  height: 300px;
-  display: flex;
-  margin: 0;
-}
-
-.right-semicircle {
-  width: 300px;
-  height: 300px;
-  border-radius: 0 150px 150px 0;
-  overflow: hidden;
-  margin: 0;
-}
-
-.academic-card {
-  background: white;
-  padding: 30px;
-  border-radius: 15px;
-  text-align: center;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.academic-card i {
-  font-size: 3rem;
-  color: #FF8C00;
-  margin-bottom: 15px;
-}
-
-.academic-card h3 {
-  font-size: 1.3rem;
-  margin-bottom: 10px;
-  color: #333;
-}
-
-.academic-card p {
-  color: #666;
-  font-size: 0.95rem;
-  line-height: 1.6;
-}
-
-.academic-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-}
-
-.center-rectangle .academic-card {
-  width: 50%;
-}
-
-@media (max-width: 768px) {
-  .academics-grid {
-    grid-template-columns: repeat(2, 1fr) !important;
-    gap: 12px !important;
-    max-width: 100%;
-  }
-  
+/* Desktop: Horizontal Ellipse (≥1024px) */
+@media (min-width: 1024px) {
   .ellipse-container {
-    flex-direction: column;
-    height: auto;
-    width: 100%;
-    max-width: 400px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    max-width: 1200px;
     margin: 0 auto;
-    gap: 0;
   }
-  
+
   .left-semicircle {
-    width: 100%;
-    height: 150px;
-    border-radius: 150px 150px 0 0;
-    margin: 0;
-    padding: 0;
+    width: 280px;
+    height: 400px;
+    border-radius: 200px 0 0 200px;
+    overflow: hidden;
+    flex-shrink: 0;
   }
-  
+
   .center-rectangle {
-    width: 100%;
-    height: auto;
-    flex-direction: column;
-    margin: 0;
-    padding: 0;
-    gap: 0;
+    width: 600px;
+    height: 400px;
+    display: flex;
+    flex-direction: row;
+    flex-shrink: 0;
   }
-  
+
+  .center-rectangle .academic-card {
+    width: 50%;
+    height: 100%;
+  }
+
   .right-semicircle {
+    width: 280px;
+    height: 400px;
+    border-radius: 0 200px 200px 0;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+
+  .academic-card {
     width: 100%;
-    height: 150px;
-    border-radius: 0 0 150px 150px;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
     margin: 0;
     padding: 0;
+    background: transparent;
+    box-shadow: none;
+    border-radius: 0;
   }
-  
+
+  .academic-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+}
+
+/* Tablet: Horizontal Ellipse (768px - 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .ellipse-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .left-semicircle {
+    width: 200px;
+    height: 320px;
+    border-radius: 160px 0 0 160px;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+
+  .center-rectangle {
+    width: 480px;
+    height: 320px;
+    display: flex;
+    flex-direction: row;
+    flex-shrink: 0;
+  }
+
+  .center-rectangle .academic-card {
+    width: 50%;
+    height: 100%;
+  }
+
+  .right-semicircle {
+    width: 200px;
+    height: 320px;
+    border-radius: 0 160px 160px 0;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+
+  .academic-card {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    background: transparent;
+    box-shadow: none;
+    border-radius: 0;
+  }
+
+  .academic-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+}
+
+/* Mobile: Vertical Ellipse (≤767px) */
+@media (max-width: 767px) {
+  .ellipse-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 280px;
+    margin: 0 auto;
+  }
+
+  .left-semicircle {
+    width: 280px;
+    height: 140px;
+    border-radius: 140px 140px 0 0;
+    overflow: hidden;
+  }
+
+  .center-rectangle {
+    width: 280px;
+    display: flex;
+    flex-direction: column;
+  }
+
   .center-rectangle .academic-card {
     width: 100%;
-    height: 200px; /* Fixed height for consistency */
-    margin: 0;
-    padding: 0;
+    height: 200px;
   }
-  
+
+  .right-semicircle {
+    width: 280px;
+    height: 140px;
+    border-radius: 0 0 140px 140px;
+    overflow: hidden;
+  }
+
   .academic-card {
-    margin: 0;
-    padding: 15px 10px;
-  }
-  
-  .academic-card i {
-    font-size: 1.8rem;
-    margin-bottom: 10px;
-  }
-  
-  .academic-card h3 {
-    font-size: 0.95rem;
-    margin-bottom: 8px;
-  }
-  
-  .academic-card p {
-    font-size: 0.75rem;
-    line-height: 1.4;
-  }
-  
-  .academic-card img {
-    object-fit: cover;
-    border-radius: 0;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
     margin: 0;
     padding: 0;
-    height: 100%;
-    width: 100%;
+    background: transparent;
+    box-shadow: none;
+    border-radius: 0;
   }
-  
-  .academic-card:hover {
-    transform: none;
+
+  .academic-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
   }
 }
 
