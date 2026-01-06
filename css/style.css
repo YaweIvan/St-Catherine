@@ -601,10 +601,9 @@ body.menu-open {
     background-attachment: scroll; /* Disable fixed on mobile for better performance */
   }
 
-  /* Preserve existing overlays on mobile */
+  /* Remove overlay on mobile */
   .hero-home::after {
-    width: 100%;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.5) 100%);
+    display: none;
   }
 
   .hero-about::before {
