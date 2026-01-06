@@ -205,15 +205,6 @@ function applyHeroStyle(heroElement, pageType) {
                 </div>
             `);
             break;
-        case 'news':
-            heroContent.insertAdjacentHTML('beforeend', `
-                <div class="news-highlight">
-                    <div class="news-date">Latest Update</div>
-                    <h3 class="news-headline">New Term Begins January 15, 2025</h3>
-                    <p>Registration is now open for the new academic term. Secure your child's place today!</p>
-                </div>
-            `);
-            break;
         case 'contact':
             heroContent.insertAdjacentHTML('beforeend', `
                 <div class="contact-info-card">

@@ -6,6 +6,8 @@
 }
 
 img {
+  max-width: 100%;
+  height: auto;
   image-rendering: high-quality;
   image-rendering: -webkit-optimize-contrast;
   backface-visibility: hidden;
@@ -246,25 +248,44 @@ body.menu-open {
 
 /* Academics Hero - Orange Gradient with Icons */
 .hero-academics {
-  background: linear-gradient(45deg, #ff8c00 0%, #ff7f00 50%, #ff6b00 100%);
+  background-image: url("../images/_DSC0389.JPG");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   color: white;
-  padding: 120px 0;
-  min-height: 60vh;
+  padding: 80px 0;
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
   position: relative;
   overflow: hidden;
 }
 
-.hero-academics::before {
-  content: '';
+.hero-academics::after {
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
-  right: 0;
-  bottom: 0;
-  background-image: 
-    radial-gradient(circle at 20% 80%, rgba(255,255,255,0.1) 0%, transparent 50%),
-    radial-gradient(circle at 80% 20%, rgba(255,255,255,0.1) 0%, transparent 50%);
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  z-index: 1;
 }
+
+/* Hide overlay on desktop by default */
+@media (min-width: 1024px) {
+  .hero-academics::after {
+    display: none;
+  }
+}
+
+.hero-academics .hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+
+
 
 .academics-icons {
   display: flex;
@@ -310,6 +331,20 @@ body.menu-open {
   border-radius: 20px;
   backdrop-filter: blur(10px);
   margin-top: 30px;
+}
+
+/* Hide admission highlights on mobile */
+@media (max-width: 767px) {
+  .admission-highlights {
+    display: none;
+  }
+}
+
+/* Show on desktop */
+@media (min-width: 1024px) {
+  .admission-highlights {
+    display: block;
+  }
 }
 
 .highlight-item {
@@ -370,12 +405,29 @@ body.menu-open {
 
 /* Gallery Hero - Dark with Mosaic */
 .hero-gallery {
-  background: #000;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+              url('../images/IMG-20251113-WA0080.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   color: white;
   padding: 100px 0;
   min-height: 80vh;
   position: relative;
   overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .hero-gallery {
+    background-attachment: scroll;
+    background-size: cover;
+    background-position: center center;
+    min-height: 100vh;
+  }
 }
 
 .gallery-mosaic {
@@ -389,6 +441,7 @@ body.menu-open {
   grid-template-rows: repeat(4, 1fr);
   gap: 5px;
   opacity: 0.3;
+  pointer-events: none;
 }
 
 .mosaic-item {
@@ -520,36 +573,38 @@ body.menu-open {
   }
 }
 
-@media (max-width: 768px) {
-  .hero, .hero-home, .hero-about, .hero-academics, .hero-admissions, .hero-facilities, .hero-gallery, .hero-news, .hero-contact {
-    min-height: 70vh !important;
-    padding: 120px 0 20px !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
+/* Mobile-First: Consistent Hero Heights for Phones */
+@media (max-width: 767px) {
+  /* All heroes have identical height on mobile */
+  .hero, 
+  .hero-home, 
+  .hero-about, 
+  .hero-academics, 
+  .hero-admissions, 
+  .hero-facilities, 
+  .hero-gallery, 
+  .hero-news, 
+  .hero-contact {
+    min-height: 100vh;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
-  .hero .hero-title, .hero-home .hero-title, .hero-about .hero-title, .hero-academics .hero-title, .hero-admissions .hero-title, .hero-facilities .hero-title, .hero-gallery .hero-title, .hero-news .hero-title, .hero-contact .hero-title {
-    font-size: 1.5rem !important;
-    margin-bottom: 10px !important;
-    line-height: 1.3 !important;
-    text-align: center !important;
+  /* Ensure background images stay contained and scale properly */
+  .hero-home,
+  .hero-academics,
+  .hero-gallery {
+    background-size: cover;
+    background-position: center;
+    background-attachment: scroll; /* Disable fixed on mobile for better performance */
   }
 
-  .hero .hero-subtitle, .hero-home .hero-subtitle, .hero-about .hero-subtitle, .hero-academics .hero-subtitle, .hero-admissions .hero-subtitle, .hero-facilities .hero-subtitle, .hero-gallery .hero-subtitle, .hero-news .hero-subtitle, .hero-contact .hero-subtitle {
-    font-size: 0.9rem !important;
-    margin-bottom: 15px !important;
-    text-align: center !important;
-  }
-
-  .hero .hero-buttons, .hero-home .hero-buttons, .hero-about .hero-buttons, .hero-academics .hero-buttons, .hero-admissions .hero-buttons, .hero-facilities .hero-buttons, .hero-gallery .hero-buttons, .hero-news .hero-buttons, .hero-contact .hero-buttons {
-    gap: 10px !important;
-    justify-content: center !important;
-  }
-
-  .hero .btn, .hero-home .btn, .hero-about .btn, .hero-academics .btn, .hero-admissions .btn, .hero-facilities .btn, .hero-gallery .btn, .hero-news .btn, .hero-contact .btn {
-    padding: 10px 16px !important;
-    font-size: 0.8rem !important;
+  /* Preserve existing overlays on mobile */
+  .hero-home::after {
+    width: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.5) 100%);
   }
 
   .hero-about::before {
@@ -558,9 +613,44 @@ body.menu-open {
     top: auto;
     bottom: 0;
   }
-  
+
+  /* Content layout adjustments for mobile */
+  .hero-content {
+    max-width: 100%;
+    padding: 1rem;
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 1.5rem;
+  }
+
+  /* Typography remains readable on mobile */
+  .hero-title {
+    font-size: 1.75rem;
+    margin-bottom: 0.75rem;
+    line-height: 1.3;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  /* Buttons remain touch-friendly */
+  .hero-buttons {
+    flex-direction: column;
+    gap: 0.75rem;
+    justify-content: center;
+  }
+
+  .hero-buttons .btn {
+    padding: 0.75rem 1.25rem;
+    font-size: 0.95rem;
+    min-height: 44px;
+  }
+
+  /* Preserve existing mobile adaptations for special elements */
   .academics-icons {
-    gap: 20px;
+    gap: 1rem;
   }
   
   .academic-icon {
@@ -570,8 +660,15 @@ body.menu-open {
   }
   
   .facilities-showcase {
-    grid-template-columns: 1fr;
-    height: 300px;
+    display: none;
+  }
+  
+  /* Show only on tablet and up */
+}
+
+@media (min-width: 768px) {
+  .facilities-showcase {
+    display: grid !important;
   }
   
   .facility-preview:first-child {
@@ -582,11 +679,34 @@ body.menu-open {
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(6, 1fr);
   }
+}
+
+/* Tablet adjustments (768px - 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .hero, 
+  .hero-home, 
+  .hero-about, 
+  .hero-academics, 
+  .hero-admissions, 
+  .hero-facilities, 
+  .hero-gallery, 
+  .hero-news, 
+  .hero-contact {
+    min-height: 80vh;
+    padding: 2rem;
+  }
 
   .hero-content {
-    grid-template-columns: 1fr !important;
-    text-align: center !important;
-    gap: 40px !important;
+    max-width: 90%;
+    padding: 1.5rem;
+  }
+
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.1rem;
   }
 }
 
@@ -767,10 +887,9 @@ body.menu-open {
 
 /* Academics Grid - Horizontal Ellipse */
 .academics-grid {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 300px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
   margin: 50px 0;
 }
 
@@ -804,23 +923,35 @@ body.menu-open {
 }
 
 .academic-card {
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  transition: transform 0.3s ease;
-  margin: 0;
-  padding: 0;
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.academic-card img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
+.academic-card i {
+  font-size: 3rem;
+  color: #FF8C00;
+  margin-bottom: 15px;
+}
+
+.academic-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.academic-card p {
+  color: #666;
+  font-size: 0.95rem;
+  line-height: 1.6;
 }
 
 .academic-card:hover {
-  transform: scale(1.05);
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
 
 .center-rectangle .academic-card {
@@ -829,20 +960,22 @@ body.menu-open {
 
 @media (max-width: 768px) {
   .academics-grid {
-    height: 600px;
-    margin: 30px 0;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 12px !important;
+    max-width: 100%;
   }
   
   .ellipse-container {
     flex-direction: column;
-    height: 600px;
-    width: 300px;
+    height: auto;
+    width: 100%;
+    max-width: 400px;
     margin: 0 auto;
     gap: 0;
   }
   
   .left-semicircle {
-    width: 300px;
+    width: 100%;
     height: 150px;
     border-radius: 150px 150px 0 0;
     margin: 0;
@@ -850,8 +983,8 @@ body.menu-open {
   }
   
   .center-rectangle {
-    width: 300px;
-    height: 300px;
+    width: 100%;
+    height: auto;
     flex-direction: column;
     margin: 0;
     padding: 0;
@@ -859,7 +992,7 @@ body.menu-open {
   }
   
   .right-semicircle {
-    width: 300px;
+    width: 100%;
     height: 150px;
     border-radius: 0 0 150px 150px;
     margin: 0;
@@ -868,14 +1001,29 @@ body.menu-open {
   
   .center-rectangle .academic-card {
     width: 100%;
-    height: 50%;
+    height: 200px; /* Fixed height for consistency */
     margin: 0;
     padding: 0;
   }
   
   .academic-card {
     margin: 0;
-    padding: 0;
+    padding: 15px 10px;
+  }
+  
+  .academic-card i {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+  }
+  
+  .academic-card h3 {
+    font-size: 0.95rem;
+    margin-bottom: 8px;
+  }
+  
+  .academic-card p {
+    font-size: 0.75rem;
+    line-height: 1.4;
   }
   
   .academic-card img {
@@ -883,6 +1031,8 @@ body.menu-open {
     border-radius: 0;
     margin: 0;
     padding: 0;
+    height: 100%;
+    width: 100%;
   }
   
   .academic-card:hover {
@@ -897,14 +1047,29 @@ body.menu-open {
   gap: 30px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .facilities-grid {
     grid-template-columns: repeat(2, 1fr) !important;
-    gap: 15px !important;
+    gap: 12px !important;
   }
 
   .facility-card {
-    margin-bottom: 20px;
+    margin-bottom: 0;
+  }
+  
+  .facility-card img {
+    height: 120px;
+  }
+  
+  .facility-card h3 {
+    font-size: 0.95rem;
+    padding: 12px 10px 6px;
+  }
+  
+  .facility-card p {
+    font-size: 0.75rem;
+    padding: 0 10px 12px;
+    line-height: 1.4;
   }
 }
 
@@ -948,53 +1113,54 @@ body.menu-open {
   gap: 30px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .dates-grid {
     grid-template-columns: repeat(2, 1fr) !important;
-    gap: 5px !important;
+    gap: 10px !important;
     display: grid !important;
   }
 
   .date-card {
-    padding: 4px;
-    aspect-ratio: 1;
+    padding: 12px 8px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border-radius: 6px;
-    min-height: 120px;
-    max-height: 120px;
+    border-radius: 10px;
+    min-height: 140px;
   }
 
   .date-icon {
-    width: 16px;
-    height: 16px;
-    font-size: 0.6rem;
-    margin-bottom: 2px;
+    width: 35px;
+    height: 35px;
+    font-size: 1rem;
+    margin-bottom: 8px;
   }
 
   .date-card h3 {
-    font-size: 0.6rem;
-    margin-bottom: 1px;
+    font-size: 0.85rem;
+    margin-bottom: 5px;
     text-align: center;
+    line-height: 1.2;
   }
 
   .date-card .date {
-    font-size: 0.55rem;
-    margin-bottom: 2px;
+    font-size: 0.75rem;
+    margin-bottom: 6px;
     text-align: center;
+    font-weight: 600;
+    color: #ff8c00;
   }
 
   .date-card p {
-    font-size: 0.5rem;
-    line-height: 1;
+    font-size: 0.7rem;
+    line-height: 1.3;
     margin-bottom: 0;
     text-align: center;
   }
 
   .container {
-    padding: 0 8px;
+    padding: 0 10px;
   }
 }
 
@@ -2278,8 +2444,14 @@ body.menu-open {
   
   .facility-card,
   .academic-card {
-    max-width: 350px;
+    max-width: 100%;
     margin: 0 auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .facilities-grid, .dates-grid {
+    grid-template-columns: 1fr !important;
   }
 }
 
@@ -2572,37 +2744,87 @@ body.menu-open {
 }
 
 /* Mobile Responsive for Events and Articles */
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .events-grid,
   .articles-grid {
-    grid-template-columns: 1fr;
-    gap: 25px;
-    max-width: 400px;
-    margin: 30px auto 0;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 12px !important;
+    max-width: 100%;
+    margin: 20px auto 0;
   }
   
   .event-card,
   .article-card {
-    max-width: 380px;
-    margin: 0 auto;
+    max-width: 100%;
+    margin: 0;
+  }
+  
+  .event-image,
+  .article-image {
+    height: 120px;
   }
   
   .event-content,
   .article-content {
-    padding: 20px;
+    padding: 12px;
+  }
+  
+  .event-date-badge {
+    top: 8px;
+    right: 8px;
+    padding: 6px 8px;
+  }
+  
+  .event-date-badge .month {
+    font-size: 0.65rem;
+  }
+  
+  .event-date-badge .day {
+    font-size: 1.1rem;
   }
   
   .event-meta {
-    gap: 6px;
+    gap: 4px;
+    margin-bottom: 8px;
   }
   
   .event-meta span {
-    font-size: 0.85rem;
+    font-size: 0.7rem;
   }
   
   .article-content h3,
   .event-content h3 {
-    font-size: 1.2rem;
+    font-size: 0.95rem;
+    margin-bottom: 8px;
+    line-height: 1.3;
+  }
+  
+  .event-content p,
+  .article-content p {
+    font-size: 0.75rem;
+    margin-bottom: 10px;
+    line-height: 1.4;
+  }
+  
+  .event-btn,
+  .article-btn {
+    padding: 8px 14px;
+    font-size: 0.75rem;
+    border-radius: 15px;
+  }
+  
+  .article-author {
+    display: none;
+  }
+  
+  .article-category {
+    font-size: 0.65rem;
+    padding: 4px 8px;
+  }
+  
+  .article-meta {
+    font-size: 0.7rem;
+    margin-bottom: 8px;
   }
 }
 

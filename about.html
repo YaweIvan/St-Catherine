@@ -54,6 +54,34 @@
             margin-top: 50px;
         }
         
+        @media (max-width: 767px) {
+            .core-values-grid {
+                grid-template-columns: repeat(2, 1fr) !important;
+                gap: 12px !important;
+            }
+            
+            .value-card {
+                padding: 20px 12px;
+            }
+            
+            .value-icon {
+                width: 50px;
+                height: 50px;
+                font-size: 1.3rem;
+                margin-bottom: 12px;
+            }
+            
+            .value-card h3 {
+                font-size: 0.95rem;
+                margin-bottom: 8px;
+            }
+            
+            .value-card p {
+                font-size: 0.75rem;
+                line-height: 1.4;
+            }
+        }
+        
         .value-card {
             background: #fff;
             padding: 40px 30px;
@@ -225,7 +253,7 @@
     </header>
 
     <!-- Page Header -->
-    <section class="hero hero-about" style="background-image: url(./images/IMG-20251113-WA0078.jpg);">
+    <section class="hero hero-about" style="background-image: url(./images/IMG-20251113-WA0078.jpg); background-size: cover; background-position: center; background-repeat: no-repeat;">
         <div class="hero-content">
             <div>
                 <h1 class="hero-title">About St. Catherine Junior School</h1>
