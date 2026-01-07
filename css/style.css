@@ -1022,6 +1022,8 @@ body.menu-open {
     justify-content: center;
     max-width: 280px;
     margin: 0 auto;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .left-semicircle {
@@ -2491,12 +2493,11 @@ body.menu-open {
 /* Ensure grid responsiveness across all sections */
 @media (max-width: 768px) {
   .academics-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-    max-width: 100%;
-    margin: 0 auto;
-    padding: 0 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 50px 0;
+    padding: 20px 0;
   }
   
   .facilities-grid {
