@@ -2271,16 +2271,26 @@ body.menu-open {
     font-size: 1.5rem;
   }
 
+  .academics-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    padding: 0 5px;
+  }
+
   .academic-card {
-    padding: 25px 15px;
+    padding: 18px 12px;
   }
 
   .academic-card h3 {
-    font-size: 1.1rem;
+    font-size: 0.95rem;
   }
 
   .academic-card i {
-    font-size: 2rem;
+    font-size: 1.8rem;
+  }
+  
+  .academic-card p {
+    font-size: 0.8rem;
   }
 
   .facility-card img {
@@ -2361,8 +2371,25 @@ body.menu-open {
     font-size: 0.85rem;
   }
 
+  .academics-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
   .academic-card {
-    padding: 20px 12px;
+    padding: 15px 10px;
+  }
+  
+  .academic-card h3 {
+    font-size: 0.9rem;
+  }
+  
+  .academic-card i {
+    font-size: 1.6rem;
+  }
+  
+  .academic-card p {
+    font-size: 0.75rem;
   }
 
   .facility-card h3 {
@@ -2463,7 +2490,15 @@ body.menu-open {
 
 /* Ensure grid responsiveness across all sections */
 @media (max-width: 768px) {
-  .academics-grid,
+  .academics-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 10px;
+  }
+  
   .facilities-grid {
     grid-template-columns: 1fr;
     gap: 25px;
@@ -2471,10 +2506,29 @@ body.menu-open {
     margin: 0 auto;
   }
   
-  .facility-card,
+  .facility-card {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+  
   .academic-card {
     max-width: 100%;
     margin: 0 auto;
+    padding: 20px 15px;
+  }
+  
+  .academic-card i {
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+  
+  .academic-card h3 {
+    font-size: 1rem;
+    margin-bottom: 8px;
+  }
+  
+  .academic-card p {
+    font-size: 0.85rem;
   }
 }
 
