@@ -180,13 +180,13 @@ function applyHeroStyle(heroElement, pageType) {
             heroContent.insertAdjacentHTML('beforeend', `
                 <div class="facilities-showcase">
                     <div class="facility-preview">
-                        <img src="images/_DSC0457.JPG" alt="Modern Classroom">
+                        <img src="images/2kids.jpg" alt="Modern Classroom">
                     </div>
                     <div class="facility-preview">
-                        <img src="images/_DSC0462.jpg" alt="Library">
+                        <img src="images/1@ (36).jpg" alt="Library">
                     </div>
                     <div class="facility-preview">
-                        <img src="images/1@ (28).JPG" alt="Playground">
+                        <img src="images/IMG-20251113-WA0080.jpg" alt="Playground">
                     </div>
                 </div>
             `);
@@ -219,7 +219,7 @@ function applyHeroStyle(heroElement, pageType) {
                         <div class="contact-icon-hero"><i class="fas fa-phone"></i></div>
                         <div>
                             <h4>Call Us</h4>
-                            <p>+256 123 456 789</p>
+                            <p>0754729117/0772898105</p>
                         </div>
                     </div>
                     <div class="contact-item-hero">
