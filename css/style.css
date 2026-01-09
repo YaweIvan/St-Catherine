@@ -1015,15 +1015,19 @@ body.menu-open {
 
 /* Mobile: Vertical Ellipse (≤767px) */
 @media (max-width: 767px) {
+  .academics-grid {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+  }
+
   .ellipse-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     max-width: 280px;
-    margin: 0 auto;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto !important;
   }
 
   .left-semicircle {
@@ -1080,27 +1084,32 @@ body.menu-open {
 
 @media (max-width: 767px) {
   .facilities-grid {
-    grid-template-columns: repeat(2, 1fr) !important;
-    gap: 12px !important;
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+    padding: 0 10px;
   }
 
   .facility-card {
     margin-bottom: 0;
+    width: 100%;
+    max-width: 100%;
   }
   
   .facility-card img {
-    height: 120px;
+    height: 250px;
+    width: 100%;
+    object-fit: cover;
   }
   
   .facility-card h3 {
-    font-size: 0.95rem;
-    padding: 12px 10px 6px;
+    font-size: 1.1rem;
+    padding: 15px 15px 8px;
   }
   
   .facility-card p {
-    font-size: 0.75rem;
-    padding: 0 10px 12px;
-    line-height: 1.4;
+    font-size: 0.9rem;
+    padding: 0 15px 15px;
+    line-height: 1.5;
   }
 }
 
@@ -2019,6 +2028,8 @@ body.menu-open {
     transition: right 0.3s ease;
     z-index: 1000;
     padding-top: 20px;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
   }
 
   .mobile-menu-header {

@@ -159,12 +159,65 @@
         }
         
         @media (max-width: 768px) {
+            .contact-info-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+                margin-bottom: 40px;
+            }
+            
+            .contact-card {
+                padding: 30px 20px;
+            }
+            
+            .contact-icon {
+                width: 60px;
+                height: 60px;
+                font-size: 1.5rem;
+            }
+            
+            .contact-card h3 {
+                font-size: 1.2rem;
+            }
+            
+            .contact-card p {
+                font-size: 0.95rem;
+            }
+            
             .contact-form-section {
                 grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .contact-form {
+                padding: 25px 20px;
+            }
+            
+            .form-group input,
+            .form-group select,
+            .form-group textarea {
+                padding: 10px 12px;
+                font-size: 0.95rem;
+            }
+            
+            .map-container {
+                height: 300px;
+            }
+            
+            .map-placeholder iframe {
+                width: 100% !important;
+                height: 300px !important;
+            }
+            
+            .office-hours {
+                padding: 20px;
             }
             
             .hours-grid {
                 grid-template-columns: 1fr;
+            }
+            
+            .hours-item {
+                font-size: 0.9rem;
             }
         }
     </style>
@@ -359,9 +412,9 @@
                     <h3 style="color: #4B5563; margin-bottom: 25px;">Administration</h3>
                     
                     <div class="detail-item">
-                        <div class="detail-icon">
+                        <!-- <div class="detail-icon">
                             <i class="fas fa-user-tie"></i>
-                        </div>
+                        </div> -->
                         <div>
                             <h4>Head Teacher</h4>
                             <p>Mrs. Grace Namukasa<br>headteacher@stcatherine.sch.ug<br>0754729117/0772898105</p>
@@ -369,9 +422,9 @@
                     </div>
                     
                     <div class="detail-item">
-                        <div class="detail-icon">
+                        <!-- <div class="detail-icon">
                             <i class="fas fa-user-graduate"></i>
-                        </div>
+                        </div> -->
                         <div>
                             <h4>Academic Coordinator</h4>
                             <p>Mr. John Ssebunya<br>academics@stcatherine.sch.ug<br>+256 123 456 792</p>
@@ -379,9 +432,9 @@
                     </div>
                     
                     <div class="detail-item">
-                        <div class="detail-icon">
+                        <!-- <div class="detail-icon">
                             <i class="fas fa-clipboard-list"></i>
-                        </div>
+                        </div> -->
                         <div>
                             <h4>Admissions Officer</h4>
                             <p>Ms. Sarah Nakato<br>admissions@stcatherine.sch.ug<br>+256 123 456 790</p>
@@ -393,9 +446,9 @@
                     <h3 style="color: #4B5563; margin-bottom: 25px;">Support Services</h3>
                     
                     <div class="detail-item">
-                        <div class="detail-icon">
+                        <!-- <div class="detail-icon">
                             <i class="fas fa-calculator"></i>
-                        </div>
+                        </div> -->
                         <div>
                             <h4>Accounts Department</h4>
                             <p>Mr. David Mukasa<br>accounts@stcatherine.sch.ug<br>+256 123 456 793</p>
@@ -403,9 +456,9 @@
                     </div>
                     
                     <div class="detail-item">
-                        <div class="detail-icon">
+                        <!-- <div class="detail-icon">
                             <i class="fas fa-bus"></i>
-                        </div>
+                        </div> -->
                         <div>
                             <h4>Transport Coordinator</h4>
                             <p>Mr. Paul Ssemakula<br>transport@stcatherine.sch.ug<br>+256 123 456 794</p>
@@ -413,9 +466,9 @@
                     </div>
                     
                     <div class="detail-item">
-                        <div class="detail-icon">
+                        <!-- <div class="detail-icon">
                             <i class="fas fa-heartbeat"></i>
-                        </div>
+                        </div> -->
                         <div>
                             <h4>School Nurse</h4>
                             <p>Ms. Mary Namusoke<br>health@stcatherine.sch.ug<br>+256 123 456 795</p>
