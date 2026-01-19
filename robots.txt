@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+
+# Allow search engines to crawl favicon files
+Allow: /images/favicon.ico
+Allow: /images/favicon.svg
+Allow: /images/android-chrome-192x192.png
+Allow: /images/apple-touch-icon.png
+
+Sitemap: https://stcatherinejuniorschool.com/sitemap.xml
